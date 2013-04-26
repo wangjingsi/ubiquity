@@ -87,7 +87,7 @@ Type: text
 _Description:
  This is a pre-release of the ${RELEASE} live ${MEDIUM} installer. It is not
  a final release; that will come with the final release of ${RELEASE} in
- October 2012.
+ April 2013.
  .
  The installation process may resize or erase partitions on your hard disk.
  Be sure to <b>take a full backup of any valuable data</b> before running
@@ -288,7 +288,7 @@ _Description: Files (${SIZE})
 
 Template: ubiquity/text/part_auto_comment_label
 Type: text
-_Description: Where would you like to install Linux Mint?
+_Description: Where would you like to install Kubuntu?
 
 Template: ubiquity/text/part_advanced_heading_label
 Type: text
@@ -467,6 +467,11 @@ Type: text
 # A column heading in the partitioner. Indicates how much of the space on
 # this partition is used by data.
 _Description: Used
+
+Template: ubiquity/text/partition_column_syst
+Type: text
+# A column heading in the partitioner.
+_Description: System
 
 Template: ubiquity/text/partition_free_space
 Type: text
@@ -1399,7 +1404,7 @@ _Description:
 Template: ubiquity/text/use_crypto
 Type: text
 _Description:
- Encrypt the new Linux Mint installation for security
+ Encrypt the new Ubuntu installation for security
 
 Template: ubiquity/text/use_crypto_desc
 Type: text
@@ -1409,7 +1414,7 @@ _Description:
 Template: ubiquity/text/use_lvm
 Type: text
 _Description:
- Use LVM with the new Linux Mint installation
+ Use LVM with the new Ubuntu installation
 
 Template: ubiquity/text/use_lvm_desc
 Type: text
@@ -1434,7 +1439,7 @@ _Description:
 Template:ubiquity/text/crypto_description_2
 Type: text
 _Description:
- Any files outside of Linux Mint will not be encrypted.
+ Any files outside of Ubuntu will not be encrypted.
 
 Template:ubiquity/text/crypto_warning
 Type: text
@@ -1494,7 +1499,7 @@ _Description:
 Template:ubiquity/text/parition_lvm_explanation
 Type: text
 _Description:
- Logical Volume Management (LVM) lets Linux Mint treat multiple physical volumes as a single volume.
+ Logical Volume Management (LVM) lets Ubuntu treat multiple physical volumes as a single volume.
 
 Template:ubiquity/text/partition_lvm_dialog
 Type: text

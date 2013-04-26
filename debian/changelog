@@ -1,3 +1,9 @@
+ubiquity (2.14.8-1linuxmint1) olivia; urgency=low
+
+  * Olivia
+
+ -- Clement Lefebvre <root@linuxmint.com>  Fri, 26 Apr 2013 15:48:27 +0100
+
 ubiquity (2.14.8) raring; urgency=low
 
   * Disable alpha warning.

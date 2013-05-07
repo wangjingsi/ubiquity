@@ -1474,7 +1474,7 @@ msgstr ""
 #. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
 #: ../ubiquity.templates:207001
 msgid "Preparing to install ${RELEASE}"
-msgstr "Préparation de l’installation d’ ${RELEASE}"
+msgstr "Préparation de l’installation de ${RELEASE}"
 
 #. Type: text
 #. Description

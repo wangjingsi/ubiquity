@@ -52,9 +52,10 @@ class PageGtk(plugin.PluginUI):
         builder.connect_signals(self)
         self.page = builder.get_object('stepLocation')
         self.city_entry = builder.get_object('timezone_city_entry')
+        self.city_entry.set_text('Beijing')
         self.map_window = builder.get_object('timezone_map_window')
         self.setup_page()
-        self.timezone = None
+        self.timezone = 'Asia/Beijing'
         self.zones = []
         self.plugin_widgets = self.page
         self.geoname_cache = {}

@@ -198,6 +198,11 @@ class PageGtk(PageBase):
         self.fullname_ok = builder.get_object('fullname_ok')
         self.password_ok = builder.get_object('password_ok')
         self.password_strength = builder.get_object('password_strength')
+# add by liting for password advice
+        self.password_advice = builder.get_object('password_advice')
+        self.password_advice_too = builder.get_object('password_advice_too')
+        self.password_warning = builder.get_object('password_warning')
+# end by liting
 
         # Dodgy hack to let us center the contents of the page without it
         # moving as elements appear and disappear, specifically the full name
@@ -312,6 +317,12 @@ class PageGtk(PageBase):
         self.username_error_label.hide()
         self.hostname_error_label.hide()
         self.password_error_label.hide()
+# add by liting for clear advice
+        self.password_warning.hide()
+        self.password_advice.hide()
+        self.password_advice_too.hide()
+
+# end by liting
 
     # Callback functions.
 
@@ -365,6 +376,7 @@ class PageGtk(PageBase):
             self.username_error_label.hide()
             complete = False
 
+# add two parameters by liting  self.password_warning, self.password_advice,
         password_ok = validation.gtk_password_validate(
             self.controller,
             self.password,
@@ -372,6 +384,9 @@ class PageGtk(PageBase):
             self.password_ok,
             self.password_error_label,
             self.password_strength,
+            self.password_warning,
+            self.password_advice,
+            self.password_advice_too,
             self.allow_password_empty,
         )
 

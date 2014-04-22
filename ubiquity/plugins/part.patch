@@ -1,0 +1,54 @@
+--- ubi-partman.py	2014-04-15 05:03:18.360307349 +0800
++++ ubi-partmannew	2014-04-15 05:02:22.348308504 +0800
+@@ -126,6 +126,7 @@ class PageGtk(PageBase):
+         builder.connect_signals(self)
+ 
+         self.page_ask = builder.get_object('stepPartAsk')
++#        self.page_help = builder.get_object('stepHelpDialog')
+         self.page_auto = builder.get_object('stepPartAuto')
+         self.page_advanced = builder.get_object('stepPartAdvanced')
+         self.page_crypto = builder.get_object('stepPartCrypto')
+@@ -703,6 +704,21 @@ class PageGtk(PageBase):
+         else:
+             raise AssertionError("Couldn't get autopartition choice")
+ 
++    def open_helpwindow(self):
++        from gi.repository import Gtk, GObject
++        if not self.controller.allowed_change_step():
++            return
++
++        print("open help window again")
++        self.about_partition.show_all()
++
++        title = 'about_partition_dialog'
++    
++        complete = False
++        self.helpDialog.show_all()
++        self.helpDialog.run()
++        self.helpDialog.hide()
++
+     # Advanced partitioning page
+ 
+     def show_page_advanced(self):
+@@ -919,6 +935,7 @@ class PageGtk(PageBase):
+                        'crypto_overwrite_space', 'crypto_extra_time']:
+             getattr(getattr(self, widget), action)()
+ 
++
+     @plugin.only_this_page
+     def partman_dialog(self, devpart, partition, create=True):
+         from gi.repository import Gtk, GObject
+@@ -1269,6 +1286,13 @@ class PageGtk(PageBase):
+         devpart, partition = self.partition_list_get_selection()
+         self.controller.dbfilter.create_label(devpart)
+ 
++    def on_open_helpwindow_clicked(self, unused_widget):
++        self.open_helpwindow()
++
++    def on_knownbutton_clicked(self,unused_widget):
++        self.helpwindow.hide()
++        complete = True
++
+     def on_partition_list_new_activate(self, unused_widget):
+         devpart, partition = self.partition_list_get_selection()
+         self.partman_dialog(devpart, partition)

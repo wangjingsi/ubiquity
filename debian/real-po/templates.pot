@@ -55,35 +55,35 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
+#. RELEASE is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #. MEDIUM is a variable substituted into this string, and may be 'CD'
 #: ../ubiquity.templates:8001
 msgid ""
-"You can try ${RELEASE} without making any changes to your computer, directly "
+"You can try ${RELEASE} Desktop Operating System without making any changes to your computer, directly "
 "from this ${MEDIUM}."
 msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
+#. RELEASE is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:8001
 msgid ""
-"Or if you're ready, you can install ${RELEASE} alongside (or instead of) "
+"Or if you're ready, you can install ${RELEASE} Desktop Operating System alongside (or instead of) "
 "your current operating system.  This shouldn't take too long."
 msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
+#. RELEASE is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:9001
-msgid "Try ${RELEASE}"
+msgid "Try ${RELEASE} Desktop Operating System"
 msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
+#. RELEASE is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:10001
-msgid "Install ${RELEASE}"
+msgid "Install ${RELEASE} Desktop Operating System"
 msgstr ""
 
 #. Type: text
@@ -108,12 +108,12 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
+#. RELEASE is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #. MEDIUM is a variable substituted into this string, and may be 'CD'
 #: ../ubiquity.templates:15001
 msgid ""
-"This is a pre-release of the ${RELEASE} live ${MEDIUM} installer. It is not "
-"a final release; that will come with the final release of ${RELEASE} in "
+"This is a pre-release of the ${RELEASE} Desktop Operating System live ${MEDIUM} installer. It is not "
+"a final release; that will come with the final release of ${RELEASE} Desktop Operating System in "
 "April 2013."
 msgstr ""
 
@@ -366,6 +366,19 @@ msgstr ""
 
 #. Type: text
 #. Description
+#: ../ubiquity.templates:54002
+msgid "You should use at least six alphanumeric characters and symbols,amount"
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../ubiquity.templates:54003
+msgid "of digit or upper or both of them should greater than 3. eg 123*ac"
+msgstr ""
+
+
+#. Type: text
+#. Description
 #: ../ubiquity.templates:55001
 msgid "Log in automatically"
 msgstr ""
@@ -422,7 +435,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:62001
-msgid "Where would you like to install Linux Mint?"
+msgid "Where would you like to install COS Desktop Operating System?"
 msgstr ""
 
 #. Type: text
@@ -479,10 +492,10 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
+#. RELEASE is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:71001
 msgid ""
-"You will need to manually install a bootloader in order to start ${RELEASE}."
+"You will need to manually install a bootloader in order to start ${RELEASE} Desktop Operating System."
 msgstr ""
 
 #. Type: text
@@ -744,10 +757,10 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
+#. RELEASE is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:112001
 msgid ""
-"Installation has finished.  You can continue testing ${RELEASE} now, but "
+"Installation has finished.  You can continue testing ${RELEASE} Desktop Operating System now, but "
 "until you restart the computer, any changes you make or documents you save "
 "will not be preserved."
 msgstr ""
@@ -1201,7 +1214,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:181001 ../ubiquity.templates:244001
-msgid "Welcome"
+msgid "Welcome to install COS Desktop Operating System"
 msgstr ""
 
 #. Type: text
@@ -1360,9 +1373,9 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
+#. RELEASE is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:207001
-msgid "Preparing to install ${RELEASE}"
+msgid "Preparing to install ${RELEASE} Desktop Operating System"
 msgstr ""
 
 #. Type: text
@@ -1489,10 +1502,10 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. RELEASE is a variable substituted into this string, and may be 'Linux Mint'
+#. RELEASE is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:230001
 msgid ""
-"${RELEASE} uses third-party software to play Flash, MP3 and other media, and "
+"${RELEASE} Desktop Operating System uses third-party software to play Flash, MP3 and other media, and "
 "to work with some graphics and wi-fi hardware. Some of this software is "
 "proprietary. The software is subject to license terms included with its "
 "documentation."
@@ -1566,9 +1579,9 @@ msgstr ""
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
+#. DISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:246001
-msgid "Replace ${OS} with ${DISTRO}"
+msgid "Replace ${OS} with ${DISTRO} Desktop Operating System"
 msgstr ""
 
 #. Type: text
@@ -1582,10 +1595,10 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
+#. DISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:247001
-msgid "Install ${DISTRO} alongside ${OS}"
+msgid "Install ${DISTRO} Desktop Operating System alongside ${OS}"
 msgstr ""
 
 #. Type: text
@@ -1605,37 +1618,37 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
+#. DISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #. OS is a variable substituted into this string, and may be 'Windows 7'
 #: ../ubiquity.templates:248001
-msgid "Install ${DISTRO} inside ${OS}"
+msgid "Install ${DISTRO} Desktop Operating System inside ${OS}"
 msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:249001
-msgid "Something else"
+msgid "Expert mode"
 msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
+#. DISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:249001
 msgid ""
 "You can create or resize partitions yourself, or choose multiple partitions "
-"for ${DISTRO}."
+"for ${DISTRO} Desktop Operating System."
 msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 15'
+#. CURDISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System 15'
 #: ../ubiquity.templates:250001
 msgid "Erase ${CURDISTRO} and reinstall"
 msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 15'
+#. CURDISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System 15'
 #: ../ubiquity.templates:250001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
@@ -1644,7 +1657,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 15'
+#. CURDISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System 15'
 #. VER is a variable substituted into this string, and may be '11.04'
 #: ../ubiquity.templates:251001
 msgid "Upgrade ${CURDISTRO} to ${VER}"
@@ -1662,21 +1675,21 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
+#. DISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #. VER is a variable substituted into this string, and may be '11.04'
-#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 15'
+#. CURDISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System 15'
 #: ../ubiquity.templates:252001
-msgid "Install ${DISTRO} ${VER} alongside ${CURDISTRO}"
+msgid "Install ${DISTRO} Desktop Operating System ${VER} alongside ${CURDISTRO}"
 msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
+#. DISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
+#. DISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:253001 ../ubiquity.templates:256001
-msgid "Erase disk and install ${DISTRO}"
+msgid "Erase disk and install ${DISTRO} Desktop Operating System"
 msgstr ""
 
 #. Type: text
@@ -1696,7 +1709,7 @@ msgstr ""
 #. Type: text
 #. Description
 #. OS is a variable substituted into this string, and may be 'Windows 7'
-#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 15'
+#. CURDISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System 15'
 #: ../ubiquity.templates:254001
 msgid ""
 "<span foreground=\"darkred\">Warning:</span> This will delete all your "
@@ -1706,7 +1719,7 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. CURDISTRO is a variable substituted into this string, and may be 'Linux Mint 15'
+#. CURDISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System 15'
 #: ../ubiquity.templates:255001
 msgid "Reinstall ${CURDISTRO}"
 msgstr ""
@@ -1722,9 +1735,9 @@ msgstr ""
 
 #. Type: text
 #. Description
-#. DISTRO is a variable substituted into this string, and may be 'Linux Mint'
+#. DISTRO is a variable substituted into this string, and may be 'COS Desktop Operating System'
 #: ../ubiquity.templates:257001
-msgid "Install ${DISTRO} alongside them"
+msgid "Install ${DISTRO} Desktop Operating System alongside them"
 msgstr ""
 
 #. Type: text
@@ -1775,7 +1788,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:264001
-msgid "Encrypt the new Linux Mint installation for security"
+msgid "Encrypt the new COS Desktop Operating System installation for security (Security sensitive user suggestions check)"
 msgstr ""
 
 #. Type: text
@@ -1787,7 +1800,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:266001
-msgid "Use LVM with the new Linux Mint installation"
+msgid "Use LVM with the new COS Desktop Operating System installation (Disk advanced options)"
 msgstr ""
 
 #. Type: text
@@ -1821,7 +1834,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:271001
-msgid "Any files outside of Linux Mint will not be encrypted."
+msgid "Any files outside of COS Desktop Operating System will not be encrypted."
 msgstr ""
 
 #. Type: text
@@ -1891,7 +1904,7 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:283001
 msgid ""
-"Logical Volume Management (LVM) lets Linux Mint treat multiple physical volumes "
+"Logical Volume Management (LVM) lets COS Desktop Operating System treat multiple physical volumes "
 "as a single volume."
 msgstr ""
 
@@ -1905,6 +1918,18 @@ msgstr ""
 #. Description
 #: ../ubiquity.templates:285001
 msgid "Encryption options..."
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../ubiquity.templates:286001
+msgid "You should use at least six alphanumeric or symbols, amount"
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../ubiquity.templates:287001
+msgid "of digit or upper or both of them should greater than 3. eg 123*ac"
 msgstr ""
 
 #. Type: title

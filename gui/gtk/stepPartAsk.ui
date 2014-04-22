@@ -1,6 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkAboutDialog" id="helpDialog">
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="type_hint">dialog</property>
+    <property name="program_name">帮助</property>
+    <property name="website">file:///home/xunli/xxx</property>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="about_partition">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="aboutpartition_action">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="helplabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">文件系统：推荐使用 EXT4 文件系统。    
+格式化：对于一个分区是否格式化，要看分区所承载的内容，一般建议根分区格式化，其他分区如 /home 的
+可以根据用户自己的选择是否格式化，因为 /home 分区保存的是个人数据。  
+分区标签：卷标，给分区起个名字    
+挂载点：对于 Linux 系统，根分区是必需的，而且只能有一个，类似于 Windows 系统的 C 盘。交换分
+区类似于虚拟内存，建议的大小是和物理内存一样，小于2G。  
+ 
+Linux 下常见分区介绍：  
+1)、/ 分区 - Linux 系统的根分区，它是整个系统的根目录。                      
+2)、/home 分区 - 用来保存个人用户数据，建议独立挂载。    
+3)、/usr 分区 - 系统程序所在目录，也是占用空间最大的分区。
+   
+一般常见的分区方式有：
+1)、双分区方案 - 根分区和 SWAP 分区；
+2)、三分区方案 - 根分区、HOME 分区和 SWAP 分区；
+双分区方案的好处是可以最大限度的利用硬盘空间，但这样重装系统时要先备份 home，不然重装格式化分区
+时就会被删除。  
+只划分一个根分区，所有的数据都将存放在一个分区上，这对于实际的生产系统来说是不安全的（就如同使
+用Windows 时 C 盘占满所有硬盘空间）。   </property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="helpwindow">
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkBox" id="about_partition2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">文件系统：推荐使用 EXT4 文件系统。    
+格式化：对于一个分区是否格式化，要看分区所承载的内容，一般建议根分区格式化，其他分区如 /home 的可以根据用户自己的选择是否格式化，因为 /home 分区保存的是个人数据。  
+分区标签：卷标，给分区起个名字    
+挂载点：对于 Linux 系统，根分区是必需的，而且只能有一个，类似于 Windows 系统的 C 盘。交换分区类似于虚拟内存，建议的大小是和物理内存一样，小于2G。  
+ 
+Linux 下常见分区介绍：  
+1)、/ 分区 - Linux 系统的根分区，它是整个系统的根目录。                      
+2)、/home 分区 - 用来保存个人用户数据，建议独立挂载。    
+3)、/usr 分区 - 系统程序所在目录，也是占用空间最大的分区。
+   
+一般常见的分区方式有：
+1)、双分区方案 - 根分区和 SWAP 分区；
+2)、三分区方案 - 根分区、HOME 分区和 SWAP 分区；
+双分区方案的好处是可以最大限度的利用硬盘空间，但这样重装系统时要先备份 home，不然重装格式化分区时就会被删除。  
+只划分一个根分区，所有的数据都将存放在一个分区上，这对于实际的生产系统来说是不安全的（就如同使用Windows 时 C 盘占满所有硬盘空间）。 
+
+
+
+
+
+
+
+
+
+
+</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="knownbutton">
+            <property name="label" translatable="yes">我知道了</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="receives_default">True</property>
+            <signal name="clicked" handler="on_knownbutton_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkAlignment" id="stepPartAsk">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -58,7 +175,7 @@
                 </child>
                 <child>
                   <object class="GtkRadioButton" id="reuse_partition">
-                    <property name="label" translatable="yes">Upgrade Linux Mint</property>
+                    <property name="label" translatable="yes">Upgrade COS Desktop Operating System</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
                     <property name="margin_top">9</property>
@@ -92,7 +209,7 @@
                 </child>
                 <child>
                   <object class="GtkRadioButton" id="replace_partition">
-                    <property name="label" translatable="yes">Erase Linux Mint and reinstall</property>
+                    <property name="label" translatable="yes">Erase COS Desktop Operating System and reinstall</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
                     <property name="margin_top">9</property>
@@ -128,7 +245,7 @@
                 </child>
                 <child>
                   <object class="GtkRadioButton" id="resize_use_free">
-                    <property name="label" translatable="yes">Install Linux Mint alongside Windows</property>
+                    <property name="label" translatable="yes">Install COS Desktop Operating System alongside Windows</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
@@ -167,7 +284,7 @@
                 </child>
                 <child>
                   <object class="GtkRadioButton" id="use_device">
-                    <property name="label" translatable="yes">Replace Windows with Linux Mint</property>
+                    <property name="label" translatable="yes">Replace Windows with COS Desktop Operating System</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
@@ -189,7 +306,7 @@
                   <object class="GtkLabel" id="use_crypto_desc">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">24</property>
+                    <property name="margin_left">45</property>
                     <property name="xalign">0</property>
                     <property name="yalign">0</property>
                     <property name="label" translatable="yes">&lt;span size="small"&gt;You’ll choose a security key in the next step.&lt;/span&gt;</property>
@@ -205,10 +322,11 @@
                 </child>
                 <child>
                   <object class="GtkCheckButton" id="use_crypto">
-                    <property name="label" translatable="yes">Encrypt the new Linux Mint installation for security</property>
+                    <property name="label" translatable="yes">Encrypt the new COS Desktop Operating System installation for security  (Security sensitive user suggestions check)</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
+                    <property name="margin_left">21</property>
                     <property name="margin_top">21</property>
                     <property name="xalign">0</property>
                     <property name="draw_indicator">True</property>
@@ -225,7 +343,7 @@
                   <object class="GtkLabel" id="use_lvm_desc">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_left">24</property>
+                    <property name="margin_left">45</property>
                     <property name="xalign">0</property>
                     <property name="yalign">0</property>
                     <property name="label" translatable="yes">&lt;span size="small"&gt;This will set up Logical Volume Management. It allows taking snapshots and easier partition resizing.&lt;/span&gt;</property>
@@ -241,10 +359,11 @@
                 </child>
                 <child>
                   <object class="GtkCheckButton" id="use_lvm">
-                    <property name="label" translatable="yes">Use LVM with the new Linux Mint installation</property>
+                    <property name="label" translatable="yes">Use LVM with the new COS Desktop Operating System installation (Disk advanced options)</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
+                    <property name="margin_left">21</property>
                     <property name="margin_top">9</property>
                     <property name="xalign">0</property>
                     <property name="draw_indicator">True</property>
@@ -298,7 +417,7 @@
                 </child>
                 <child>
                   <object class="GtkRadioButton" id="custom_partitioning">
-                    <property name="label" translatable="yes">Something else</property>
+                    <property name="label" translatable="yes">Expert mode</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
@@ -325,6 +444,9 @@
             <property name="width">1</property>
             <property name="height">1</property>
           </packing>
+        </child>
+        <child>
+          <placeholder/>
         </child>
       </object>
     </child>

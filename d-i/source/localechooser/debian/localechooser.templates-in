@@ -56,7 +56,7 @@ Type: select
 Choices-C: ${CODES}
 Choices: ${NAMES_EN}
 Choices-en.UTF-8: ${NAMES_BOTH}
-Default: en
+Default: zh_CN
 Description: Language:
  Choose the language to be used for the installation process. The selected
  language will also be the default language for the installed system.

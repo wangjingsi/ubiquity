@@ -26,7 +26,7 @@ import os
 import re
 import subprocess
 import sys
-
+import collections
 from ubiquity import im_switch, misc
 
 
@@ -268,7 +268,7 @@ def get_languages(current_language_index=-1, only_installable=False):
     import gzip
     import icu
 
-    current_language = "English"
+    current_language = "中文(简体)"
 
     if only_installable:
         from apt.cache import Cache
@@ -280,7 +280,9 @@ def get_languages(current_language_index=-1, only_installable=False):
 
     languagelist = gzip.open(
         '/usr/lib/ubiquity/localechooser/languagelist.data.gz')
-    language_display_map = {}
+#    language_display_map = {}
+    language_display_map = collections.OrderedDict()
+
     i = 0
     for line in languagelist:
         line = misc.utf8(line)
@@ -348,7 +350,11 @@ def get_languages(current_language_index=-1, only_installable=False):
         # but also has the virtue of sorting like-glyphs together
         return x
 
-    sorted_choices = sorted(language_display_map, key=compare_choice)
+#    sorted_choices = sorted(language_display_map, reverse=True, key=compare_choice)
+#    sorted_choices = language_display_map.keys()
+    sorted_choices=[]
+    for k, v in language_display_map.items():
+        sorted_choices.append(k)
 
     return current_language, sorted_choices, language_display_map
 

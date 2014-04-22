@@ -1116,7 +1116,6 @@ Logical Volume Management (LVM) lets Linux Mint treat multiple physical volumes 
                     <property name="use_action_appearance">False</property>
                     <property name="label" translatable="yes">Add...</property>
                     <property name="use_underline">True</property>
-                    <property name="icon_name">list-add-symbolic</property>
                     <signal name="clicked" handler="on_partition_list_new_activate" swapped="no"/>
                   </object>
                   <packing>
@@ -1132,7 +1131,6 @@ Logical Volume Management (LVM) lets Linux Mint treat multiple physical volumes 
                     <property name="use_action_appearance">False</property>
                     <property name="label" translatable="yes">Delete</property>
                     <property name="use_underline">True</property>
-                    <property name="icon_name">list-remove-symbolic</property>
                     <signal name="clicked" handler="on_partition_list_delete_activate" swapped="no"/>
                   </object>
                   <packing>
@@ -1174,4 +1172,113 @@ Logical Volume Management (LVM) lets Linux Mint treat multiple physical volumes 
       </object>
     </child>
   </object>
+  <object class="GtkDialog" id="partition_fail_dialog">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">No storage was found</property>
+    <property name="modal">True</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="type_hint">dialog</property>
+    <signal name="realize" handler="set_window_hints" swapped="no"/>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="partition_fail_dialog-vbox4">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="partition_fail_dialog-action_area4">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="partition_fail_closebutton">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkAlignment" id="partition_fail_alignment27">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="border_width">6</property>
+            <child>
+              <object class="GtkBox" id="partition_fail_vbox51">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkLabel" id="partition_fail_heading_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;No storage was found&lt;/b&gt;&lt;/big&gt;</property>
+                    <property name="use_markup">True</property>
+                    <property name="single_line_mode">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkHSeparator" id="partition_fail_hseparator11">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">6</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="partition_fail_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">Sorry to notice you that no storage was found by ubiquity, it may be caused by two reasons: storage is not connected to motherboard, or storage is in a bad format. The later can be fixed by tool of Gparted, which can be invoked at Menu->Administration->Gparted Partition Editor.</property>
+                    <property name="wrap">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">False</property>
+                    <property name="padding">6</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="-7">partition_fail_closebutton</action-widget>
+    </action-widgets>
+  </object>
+
 </interface>

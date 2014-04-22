@@ -482,7 +482,7 @@ def get_release():
         #     syslog.syslog(syslog.LOG_ERR, 'Unable to determine the release.')
 
         # if not get_release.release_info:
-        get_release.release_info = ReleaseInfo(name='Linux Mint', version='15')
+        get_release.release_info = ReleaseInfo(name='COS', version='1.0')
     return get_release.release_info
 
 get_release.release_info = None

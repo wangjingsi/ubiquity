@@ -68,6 +68,10 @@ class PageBase(plugin.PluginUI):
 class PageGtk(PageBase):
     plugin_is_language = True
     plugin_title = 'ubiquity/text/language_heading_label'
+    #plugin_help = 'this is help in welcome'
+    #helpfile= open("language_help.txt")
+    #plugin_help = helpfile.read()
+    help_dialog = 'help_welcome'
 
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
@@ -377,9 +381,12 @@ class PageGtk(PageBase):
             self.updating_installer = False
         elif uri == 'release-notes':
             import subprocess
-            uri = self.release_notes_url.replace('${LANG}', lang)
-            subprocess.Popen(['sensible-browser', uri], close_fds=True,
-                             preexec_fn=misc.drop_all_privileges)
+           # uri = self.release_notes_url.replace('${LANG}', lang)
+            #subprocess.Popen(['sensible-browser', uri], close_fds=True,
+             #                preexec_fn=misc.drop_all_privileges)
+            uri = '/cdrom/.disk/release_notes_url' 
+            subprocess.Popen(['/usr/bin/gedit', uri], close_fds=True,
+                             preexec_fn=misc.drop_all_privileges)   #change by wangjingsi
         return True
 
 

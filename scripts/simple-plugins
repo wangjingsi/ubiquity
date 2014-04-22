@@ -11,6 +11,9 @@ if [ "$1" = "prepare" ]; then
             ubuntu-drivers autoinstall --package-list /run/ubuntu-drivers.autoinstall || \
 		logger -t ubiquity "ubuntu-drivers autoinstall failed with code: $?"
     fi
+elif [ "$1" = "prepare2" ];then
+    db_input high ubiquity/user_sure || true
+    db_get ubiquity/user_sure
 elif [ "$1" = "wireless" ]; then
     db_get ubiquity/online
     if [ "$RET" != true ]; then

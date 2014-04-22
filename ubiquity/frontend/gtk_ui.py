@@ -310,9 +310,22 @@ class Wizard(BaseFrontend):
                     mod.widgets = fill_out(widgets)
                     mod.optional_widgets = fill_out(optional_widgets)
                     mod.all_widgets = mod.widgets + mod.optional_widgets
-                    self.pageslen += 1
-                    self.pages.append(mod)
-
+                    
+# add by liting for hide prepare
+                    if mod.module.NAME == 'prepare':
+                        size = misc.install_size()
+                        
+                        ret = mod.filter_class.big_enough(mod.filter_class, size)
+                        if not ret: 
+                            self.pageslen += 1
+                            self.pages.append(mod)
+                    elif mod.module.NAME == 'timezone':
+                        mod.ui.city_entry.set_text('Beijing')
+                        self.db.set('time/zone','Asia/Beijing')
+                    else:
+                        self.pageslen += 1
+                        self.pages.append(mod)
+# end by liting
         # If no plugins declare they are install, then we'll say the last one
         # is
         if not found_install:
@@ -895,6 +908,8 @@ class Wizard(BaseFrontend):
             box = self.builder.get_object(eventbox)
             style = box.get_style_context()
             style.add_class('ubiquity-menubar')
+
+        self.live_installer.set_icon_name("ubiquity")
 
         # TODO lazy load
         from gi.repository import Vte
@@ -1492,6 +1507,16 @@ class Wizard(BaseFrontend):
         for i in range(len(self.pages))[index + 1:]:
             self.dot_grid.get_child_at(i, 0).set_fraction(0)
 
+# add by yuanzhe
+        if current == 4:
+            container = self.steps.get_nth_page(5)
+            for c in container.get_children():
+                c.hide()
+        if current == 5:
+            container = self.steps.get_nth_page(5)
+            for c in container.get_children():
+                c.show()
+
         syslog.syslog('switched to page %s' % name)
 
     # Callbacks provided to components.
@@ -1606,6 +1631,22 @@ class Wizard(BaseFrontend):
             # starts, it does so with the most recent changes.
             self.stop_debconf()
             self.start_debconf()
+# add by liting for test
+            uui=self.pages[self.pagesindex].ui
+            self.testpartinfo = self.pages[self.pagesindex].filter_class(self, ui = uui) 
+            pagename = self.pages[self.pagesindex].module.NAME
+#            self.partinfo_cache = self.testpartinfo.partition_cache
+
+#            for key,value in self.partinfo_cache.items():
+#                mountpoints = value.get('mountpoint')
+#                if mountpoints == '/':
+#                    devpart = value.get('parted',{}).get('path')   
+#                    devsize = value.get('parted',{}).get('size')
+#            f = open('/tmp/partinfo.txt', "w")
+#            f.write(pagename)
+#                    f.write(devsize)
+#            f.close()
+# end by liting
             options = misc.grub_options()
             self.grub_options.clear()
             for opt in options:

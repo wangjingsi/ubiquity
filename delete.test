@@ -1,0 +1,286 @@
+./debian/imported-po/Makefile:templates.pot: ../ubiquity.templates-imported
+./debian/imported-po/Makefile:	./add-contexts templates.pot
+./debian/imported-po/Makefile:update: templates.pot
+./debian/imported-po/Makefile:		msgmerge -q "$$p" -C "$$PANEL_PO/$$b" templates.pot | \
+./debian/autoreconf.before:0440d62d6bd55c77eb811bada579360a  ./d-i/source/grub-installer/debian/po/templates.pot
+./debian/autoreconf.before:13701d21ba1193b201aaf909e031be47  ./d-i/source/console-setup/debian/po/templates.pot
+./debian/autoreconf.before:4669b78d81229ab07c14771d166cb297  ./d-i/source/partman-jfs/debian/po/templates.pot
+./debian/autoreconf.before:7e4c66b1d87a4e7db34aa91b41ede222  ./d-i/source/partman-crypto/debian/po/templates.pot
+./debian/autoreconf.before:eee36f2d6a6510f775dbf2a3881753a6  ./d-i/source/base-installer/debian/po/templates.pot
+./debian/autoreconf.before:59df097bbeb00573706e2753e2101039  ./d-i/source/apt-setup/debian/po/templates.pot
+./debian/autoreconf.before:cb627e8bcd5e08c03a0bfae926cf8652  ./d-i/source/partman-auto-crypto/debian/po/templates.pot
+./debian/autoreconf.before:fa0c553c0d5990396352a155eaee53cc  ./d-i/source/partman-xfs/debian/po/templates.pot
+./debian/autoreconf.before:7c1c55bb741eae6aa2109dc1688757f3  ./d-i/source/partman-newworld/debian/po/templates.pot
+./debian/autoreconf.before:00525a0163c1b001c68dfa70e21710c4  ./d-i/source/partman-base/debian/po/templates.pot
+./debian/autoreconf.before:5d76e1d0b0600418b32081b597fab52a  ./d-i/source/partman-basicfilesystems/debian/po/templates.pot
+./debian/autoreconf.before:288835323369386d3769b4f51a60a894  ./d-i/source/partman-uboot/debian/po/templates.pot
+./debian/autoreconf.before:255f62134571d43b8113f4ff0f735d67  ./d-i/source/partman-partitioning/debian/po/templates.pot
+./debian/autoreconf.before:153dbe4c9ec939127569b04785cfde4d  ./d-i/source/netcfg/debian/po/templates.pot
+./debian/autoreconf.before:baa9ed9246cdfdadcfd29701c6759c6c  ./d-i/source/debian-installer-utils/debian/po/templates.pot
+./debian/autoreconf.before:7d6d7dd37148851d3532a78a6aa822fe  ./d-i/source/partman-basicmethods/debian/po/templates.pot
+./debian/autoreconf.before:0fda8e0cf94903734eb1cb61d37eadcc  ./d-i/source/hw-detect/debian/po/templates.pot
+./debian/autoreconf.before:281d4b0aeab736bb72b90a531a72e9cd  ./d-i/source/yaboot-installer/debian/po/templates.pot
+./debian/autoreconf.before:d762d1f292ec243168ed23b2ac813bf5  ./d-i/source/preseed/debian/po/templates.pot
+./debian/autoreconf.before:7f560fd6c7f41e8d4f482f77a70eb237  ./d-i/source/tzsetup/debian/po/templates.pot
+./debian/autoreconf.before:ba36aab68e194c434718757cf7808d58  ./d-i/source/partman-btrfs/debian/po/templates.pot
+./debian/autoreconf.before:e475c5dfe02ed1a6a98b06c5059ac3aa  ./d-i/source/partman-reiserfs/debian/po/templates.pot
+./debian/autoreconf.before:bc11cd955525f8f5446f7fcd0ba71da8  ./d-i/source/partman-lvm/debian/po/templates.pot
+./debian/autoreconf.before:222b2cfd9d63bd27c94e282a47c405e7  ./d-i/source/clock-setup/debian/po/templates.pot
+./debian/autoreconf.before:7767af4fe7d75d1802bd9fcb13c0dab6  ./d-i/source/partman-efi/debian/po/templates.pot
+./debian/autoreconf.before:9ec3da5846fa57a2d7cfcbccb661187b  ./d-i/source/partman-ext3/debian/po/templates.pot
+./debian/autoreconf.before:238f600013158ecc8890372d939967bd  ./d-i/source/localechooser/debian/po/templates.pot
+./debian/autoreconf.before:871ec033aeb680a299ed7092aa80bd5f  ./d-i/source/partman-auto-lvm/debian/po/templates.pot
+./debian/autoreconf.before:328f02e548659d2633f254899da3d302  ./d-i/source/flash-kernel/debian/po/templates.pot
+./debian/autoreconf.before:9c5ac8231aea7e67ed69e04bc8350899  ./d-i/source/partconf/debian/po/templates.pot
+./debian/autoreconf.before:9385718df23905979a89f3cc41cd03d0  ./d-i/source/partman-auto-loop/debian/po/templates.pot
+./debian/autoreconf.before:eafe9e3b15b1d3377c4b0d207b34b9d4  ./d-i/source/user-setup/debian/po/templates.pot
+./debian/autoreconf.before:a7803f7f03d47a9872ef89770207e016  ./d-i/source/choose-mirror/debian/po/templates.pot
+./debian/autoreconf.before:c10f069af8e9daa5edef1ffa1ec714d0  ./d-i/source/partman-target/debian/po/templates.pot
+./debian/autoreconf.before:69a635504bdebc55fdf017c36439ca33  ./d-i/source/partman-auto/debian/po/templates.pot
+./debian/autoreconf.after:0440d62d6bd55c77eb811bada579360a  ./d-i/source/grub-installer/debian/po/templates.pot
+./debian/autoreconf.after:13701d21ba1193b201aaf909e031be47  ./d-i/source/console-setup/debian/po/templates.pot
+./debian/autoreconf.after:4669b78d81229ab07c14771d166cb297  ./d-i/source/partman-jfs/debian/po/templates.pot
+./debian/autoreconf.after:7e4c66b1d87a4e7db34aa91b41ede222  ./d-i/source/partman-crypto/debian/po/templates.pot
+./debian/autoreconf.after:eee36f2d6a6510f775dbf2a3881753a6  ./d-i/source/base-installer/debian/po/templates.pot
+./debian/autoreconf.after:59df097bbeb00573706e2753e2101039  ./d-i/source/apt-setup/debian/po/templates.pot
+./debian/autoreconf.after:cb627e8bcd5e08c03a0bfae926cf8652  ./d-i/source/partman-auto-crypto/debian/po/templates.pot
+./debian/autoreconf.after:fa0c553c0d5990396352a155eaee53cc  ./d-i/source/partman-xfs/debian/po/templates.pot
+./debian/autoreconf.after:7c1c55bb741eae6aa2109dc1688757f3  ./d-i/source/partman-newworld/debian/po/templates.pot
+./debian/autoreconf.after:00525a0163c1b001c68dfa70e21710c4  ./d-i/source/partman-base/debian/po/templates.pot
+./debian/autoreconf.after:5d76e1d0b0600418b32081b597fab52a  ./d-i/source/partman-basicfilesystems/debian/po/templates.pot
+./debian/autoreconf.after:288835323369386d3769b4f51a60a894  ./d-i/source/partman-uboot/debian/po/templates.pot
+./debian/autoreconf.after:255f62134571d43b8113f4ff0f735d67  ./d-i/source/partman-partitioning/debian/po/templates.pot
+./debian/autoreconf.after:153dbe4c9ec939127569b04785cfde4d  ./d-i/source/netcfg/debian/po/templates.pot
+./debian/autoreconf.after:baa9ed9246cdfdadcfd29701c6759c6c  ./d-i/source/debian-installer-utils/debian/po/templates.pot
+./debian/autoreconf.after:7d6d7dd37148851d3532a78a6aa822fe  ./d-i/source/partman-basicmethods/debian/po/templates.pot
+./debian/autoreconf.after:0fda8e0cf94903734eb1cb61d37eadcc  ./d-i/source/hw-detect/debian/po/templates.pot
+./debian/autoreconf.after:281d4b0aeab736bb72b90a531a72e9cd  ./d-i/source/yaboot-installer/debian/po/templates.pot
+./debian/autoreconf.after:d762d1f292ec243168ed23b2ac813bf5  ./d-i/source/preseed/debian/po/templates.pot
+./debian/autoreconf.after:7f560fd6c7f41e8d4f482f77a70eb237  ./d-i/source/tzsetup/debian/po/templates.pot
+./debian/autoreconf.after:ba36aab68e194c434718757cf7808d58  ./d-i/source/partman-btrfs/debian/po/templates.pot
+./debian/autoreconf.after:e475c5dfe02ed1a6a98b06c5059ac3aa  ./d-i/source/partman-reiserfs/debian/po/templates.pot
+./debian/autoreconf.after:bc11cd955525f8f5446f7fcd0ba71da8  ./d-i/source/partman-lvm/debian/po/templates.pot
+./debian/autoreconf.after:222b2cfd9d63bd27c94e282a47c405e7  ./d-i/source/clock-setup/debian/po/templates.pot
+./debian/autoreconf.after:7767af4fe7d75d1802bd9fcb13c0dab6  ./d-i/source/partman-efi/debian/po/templates.pot
+./debian/autoreconf.after:9ec3da5846fa57a2d7cfcbccb661187b  ./d-i/source/partman-ext3/debian/po/templates.pot
+./debian/autoreconf.after:238f600013158ecc8890372d939967bd  ./d-i/source/localechooser/debian/po/templates.pot
+./debian/autoreconf.after:871ec033aeb680a299ed7092aa80bd5f  ./d-i/source/partman-auto-lvm/debian/po/templates.pot
+./debian/autoreconf.after:328f02e548659d2633f254899da3d302  ./d-i/source/flash-kernel/debian/po/templates.pot
+./debian/autoreconf.after:9c5ac8231aea7e67ed69e04bc8350899  ./d-i/source/partconf/debian/po/templates.pot
+./debian/autoreconf.after:9385718df23905979a89f3cc41cd03d0  ./d-i/source/partman-auto-loop/debian/po/templates.pot
+./debian/autoreconf.after:eafe9e3b15b1d3377c4b0d207b34b9d4  ./d-i/source/user-setup/debian/po/templates.pot
+./debian/autoreconf.after:a7803f7f03d47a9872ef89770207e016  ./d-i/source/choose-mirror/debian/po/templates.pot
+./debian/autoreconf.after:c10f069af8e9daa5edef1ffa1ec714d0  ./d-i/source/partman-target/debian/po/templates.pot
+./debian/autoreconf.after:69a635504bdebc55fdf017c36439ca33  ./d-i/source/partman-auto/debian/po/templates.pot
+./d-i/source/grub-installer/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/grub-installer/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/grub-installer/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/grub-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/grub-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/grub-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-crypto/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/base-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/apt-setup/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/apt-setup/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-crypto/debian/changelog:  * Run debconf-updatepo to generate debian/po/templates.pot
+./d-i/source/partman-newworld/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-newworld/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-newworld/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-newworld/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-newworld/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-base/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-base/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-base/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-base/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-base/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-basicfilesystems/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-partitioning/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/yaboot-installer/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/clock-setup/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/localechooser/mktemplates.base:# -->this will create pobuild/templates.pot
+./d-i/source/localechooser/mktemplates.base:			debian/pobuild/templates.pot
+./d-i/source/partman-auto-lvm/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto-lvm/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partconf/debian/po/kn.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/choose-mirror/mktemplates:# Run debconf-updatepo to create pobuild/templates.pot
+./d-i/source/choose-mirror/mktemplates:    # update with generated templates.pot
+./d-i/source/choose-mirror/mktemplates:		debian/pobuild/templates.pot 2>/dev/null
+./d-i/source/choose-mirror/mktemplates:		    debian/pobuild/templates.pot 2>/dev/null
+./d-i/source/choose-mirror/debian/changelog:  * Build templates.pot from templates-in, not choose-mirror.templates-in,
+./d-i/source/partman-auto/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+./d-i/source/partman-auto/debian/po/ka.po:#  templates.pot (PACKAGE VERSION)#-#-#-#-
+匹配到二进制文件 ./.git/index

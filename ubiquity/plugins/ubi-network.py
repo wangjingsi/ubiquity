@@ -21,7 +21,7 @@ from ubiquity import plugin
 
 
 NAME = 'network'
-AFTER = 'usersetup'
+AFTER = 'overview'
 WEIGHT = 12
 
 

@@ -151,6 +151,9 @@ def gtk_password_validate(controller,
                           password_ok,
                           password_error_label,
                           password_strength,
+                          password_warning,
+                          password_advice,
+                          password_advice_too,
                           allow_empty=False,
                           ):
     complete = True
@@ -173,19 +176,42 @@ def gtk_password_validate(controller,
         password_error_label.hide()
 
     if allow_empty:
-        password_strength.hide()
+#        password_strength.hide()
+# add by liting for hide advice label
+        password_advice.hide()
+        password_advice_too.hide()
+        password_warning.hide()
     elif not passw:
         password_strength.hide()
+        password_warning.hide()
+        password_advice.hide()
+        password_advice_too.hide()
         complete = False
+# end by liting
     else:
         (txt, color) = human_password_strength(passw)
         # TODO Cache
         txt = controller.get_string('ubiquity/text/password/' + txt)
         txt = '<small><span foreground="%s"><b>%s</b></span></small>' \
               % (color, txt)
-        password_strength.set_markup(txt)
-        password_strength.show()
-        if passw == vpassw:
+#        password_strength.set_markup(txt)
+#        password_strength.show()
+#        if passw == vpassw:
+# add by liting for password advice
+        strstr='darkred'
+        strstr2='darkorange'
+        goodstrong='darkgreen'
+        if color is strstr or color is strstr2:
+            password_warning.show()
+            password_advice.show()
+            password_advice_too.show()
+            complete = False
+        elif color is goodstrong and passw != vpassw:
+            password_warning.hide()
+            password_advice.hide()
+            password_advice_too.hide()
+        elif passw == vpassw:
+# end by liting
             password_ok.show()
 
     return complete

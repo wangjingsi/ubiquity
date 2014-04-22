@@ -50,7 +50,7 @@ class PreparePageBase(plugin.PluginUI):
         if not state:
             # There's either no drives present, or not enough free space.
             # Either way, we cannot continue.
-            self.controller.allow_go_forward(False)
+            self.controller.allow_go_forward(True)
         self.prepare_sufficient_space.set_state(state)
 
     def set_sufficient_space_text(self, space):

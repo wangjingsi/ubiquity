@@ -1420,7 +1420,7 @@ _Description:
 Template: ubiquity/text/use_crypto
 Type: text
 _Description:
- Encrypt the new COS Desktop Operating System installation for security (Security sensitive user suggestions check)
+ Encrypt the new COS Desktop Operating System for security (Security sensitive user suggestions check)
 
 Template: ubiquity/text/use_crypto_desc
 Type: text

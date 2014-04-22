@@ -1835,8 +1835,8 @@ msgstr "之后："
 #. Type: text
 #. Description
 #: ../ubiquity.templates:264001
-msgid "Encrypt the new COS Desktop Operating System installation for security (Security sensitive user suggestions check)"
-msgstr "为了安全起见，将会加密你的新 COS 桌面操作系统安装程序 (安全敏感用户建议勾选)"
+msgid "Encrypt the new COS Desktop Operating System for security (Security sensitive user suggestions check)"
+msgstr "为了安全起见，将会加密你的新 COS 桌面操作系统 (安全敏感用户建议勾选)"
 
 #. Type: text
 #. Description

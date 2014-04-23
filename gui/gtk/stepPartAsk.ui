@@ -322,7 +322,7 @@ Linux 下常见分区介绍：
                 </child>
                 <child>
                   <object class="GtkCheckButton" id="use_crypto">
-                    <property name="label" translatable="yes">Encrypt the new COS Desktop Operating System installation for security  (Security sensitive user suggestions check)</property>
+                    <property name="label" translatable="yes">Encrypt the new COS Desktop Operating System for security  (Security sensitive user suggestions check)</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
@@ -444,9 +444,6 @@ Linux 下常见分区介绍：
             <property name="width">1</property>
             <property name="height">1</property>
           </packing>
-        </child>
-        <child>
-          <placeholder/>
         </child>
       </object>
     </child>

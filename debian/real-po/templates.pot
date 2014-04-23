@@ -1788,7 +1788,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:264001
-msgid "Encrypt the new COS Desktop Operating System installation for security (Security sensitive user suggestions check)"
+msgid "Encrypt the new COS Desktop Operating System for security (Security sensitive user suggestions check)"
 msgstr ""
 
 #. Type: text

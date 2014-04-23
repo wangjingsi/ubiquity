@@ -1467,6 +1467,13 @@ class Wizard(BaseFrontend):
         step = self.page_name(step_num)
         syslog.syslog('Step_before = %s' % step)
 
+#add by wangjingsi
+    def on_help_clicked(self,unused_widget):
+        self.myui = self.pages[self.pagesindex].ui
+        if hasattr(self.myui, 'plugin_on_help_clicked'):
+            self.myui.plugin_on_help_clicked()
+#end wangjingsi
+
     def on_back_clicked(self, unused_widget):
         """Callback to set previous screen."""
         if not self.allowed_change_step:

@@ -108,6 +108,7 @@ class PageBase(plugin.PluginUI):
 class PageGtk(PageBase):
     plugin_title = 'ubiquity/text/part_auto_heading_label'
     plugin_is_install = True
+    help_dialog = 'help_partman' #add by wangjingsi
 
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
@@ -201,6 +202,11 @@ class PageGtk(PageBase):
         # Define a list to save grub imformation
         self.grub_options = []
 
+#add by wangjingsi
+    def plugin_on_help_clicked(self):
+        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui',self.help_dialog)
+#end by wangjingsi
+
     def plugin_get_current_page(self):
         if self.current_page == self.page_ask:
             self.plugin_is_install = self.part_ask_option_is_install()
@@ -278,6 +284,7 @@ class PageGtk(PageBase):
         one_disk = len(disks) == 1
 
         if custom:
+            self.help_dialog = 'help_PartAdvanced' #add by wangjingsi
             self.set_page_title(self.custom_partitioning.get_label())
             self.current_page = self.page_advanced
             self.move_crypto_widgets(auto=False)
@@ -301,6 +308,7 @@ class PageGtk(PageBase):
         # TODO dmitrij.ledkov 2012-07-25 no way to go back and return
         # to here? This needs to be addressed in the design document.
         if crypto and use_device and self.current_page == self.page_ask:
+            self.help_dialog = 'help_PartCrypto' #add by wangjingsi
             self.set_page_title(
                 self.controller.get_string('ubiquity/text/crypto_label'))
             self.current_page = self.page_crypto
@@ -328,6 +336,7 @@ class PageGtk(PageBase):
         if (self.current_page in [self.page_ask, self.page_crypto]
                 and not done_partitioning):
             if resize:
+                self.help_dialog = 'help_PartAuto' #add by wangjingsi
                 self.set_page_title(self.resize_use_free.get_label())
                 if 'wubi' in self.extra_options:
                     self.configure_wubi_and_reboot()
@@ -362,6 +371,7 @@ class PageGtk(PageBase):
         return False
 
     def plugin_on_back_clicked(self):
+        self.help_dialog = 'help_partman' #add by wangjingsi
         if self.current_page in [self.page_auto, self.page_crypto]:
             title = self.controller.get_string(self.plugin_title)
             self.controller._wizard.page_title.set_markup(

@@ -19,6 +19,7 @@
 # along with Ubiquity.  If not, see <http://www.gnu.org/licenses/>.
 
 from ubiquity.filteredcommand import FilteredCommand, UntrustedBase
+from gi.repository import Gtk #add by wangjingsi
 
 
 class PluginUI(UntrustedBase):
@@ -27,6 +28,17 @@ class PluginUI(UntrustedBase):
     def __init__(self, *args, **kwargs):
         pass
 
+#add by wangjingsi
+    def show_help(self,uipath,objectname):
+        self.builder = Gtk.Builder()
+        self.builder.add_from_file(uipath)
+        self.builder.connect_signals(self)
+        self.window = self.builder.get_object(objectname)
+        self.window.show_all()
+
+    def closs_help(self,argc):
+        self.window.destroy()
+#end wangjingsi
 
 class Plugin(FilteredCommand):
     def prepare(self, unfiltered=False):

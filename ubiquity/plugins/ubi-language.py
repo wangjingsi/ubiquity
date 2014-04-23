@@ -68,10 +68,7 @@ class PageBase(plugin.PluginUI):
 class PageGtk(PageBase):
     plugin_is_language = True
     plugin_title = 'ubiquity/text/language_heading_label'
-    #plugin_help = 'this is help in welcome'
-    #helpfile= open("language_help.txt")
-    #plugin_help = helpfile.read()
-    help_dialog = 'help_welcome'
+    help_dialog = 'help_language' #add by wangjingsi
 
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
@@ -135,6 +132,11 @@ class PageGtk(PageBase):
             for w in self.page.get_children():
                 w.hide()
         self.plugin_widgets = self.page
+
+#add by wangjingsi
+    def plugin_on_help_clicked(self):
+        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui',self.help_dialog)
+#end by wangjingsi
 
     @plugin.only_this_page
     def on_try_ubuntu_clicked(self, *args):

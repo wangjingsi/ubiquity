@@ -161,6 +161,7 @@ class PageBase(plugin.PluginUI):
 
 class PageGtk(PageBase):
     plugin_title = 'ubiquity/text/userinfo_heading_label'
+    help_dialog = 'help_usersetup' #add by wangjingsi
 
     def __init__(self, controller, *args, **kwargs):
         from gi.repository import Gio, Gtk
@@ -239,6 +240,11 @@ class PageGtk(PageBase):
 
         self.resolver_ok = True
         self.plugin_widgets = self.page
+
+#add by wangjingsi
+    def plugin_on_help_clicked(self):
+        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui',self.help_dialog)
+#end by wangjingsi
 
     def plugin_translate(self, lang):
         # TODO Move back into the frontend as we can check

@@ -121,8 +121,6 @@ endif
 	# Bits of manual installation that can't be done by dh_install
 	mkdir -p debian/ubiquity/var/cache/debconfbak
 	install $(CURDIR)/zone.tab debian/ubiquity/var/cache/debconfbak
-	install $(CURDIR)/30parted debian/ubiquity/var/cache/debconfbak
-	install $(CURDIR)/languagelist.data.gz debian/ubiquity/var/cache/debconfbak
 	install bin/ubiquity-wrapper debian/ubiquity/usr/bin/ubiquity
 	sed 's/@VERSION@/$(VERSION)/g' bin/ubiquity \
 		> debian/ubiquity/usr/lib/ubiquity/bin/ubiquity

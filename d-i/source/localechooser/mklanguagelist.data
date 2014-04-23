@@ -65,7 +65,10 @@ for my $name (sort_C_first @languagenames) {
 		$name.
 		":".
 		$translations{$name};
-	print TOUT $line, "\n";
+        my $len = (length $line);
+        if($len > 3){
+	    print TOUT $line, "\n";
+        }
     }
 }
 close(TOUT) || warn;

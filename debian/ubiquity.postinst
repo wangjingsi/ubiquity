@@ -7,9 +7,7 @@ if [ -e /etc/rc2.d/S20ubiquity ]; then
 	update-rc.d -f ubiquity remove >/dev/null 2>&1
 fi
 
-mv /var/cache/debconfbak/30parted /lib/partman/init.d
 mv /var/cache/debconfbak/zone.tab /usr/share/zoneinfo
-mv /var/cache/debconfbak/languagelist.data.gz /usr/lib/ubiquity/localechooser/
 rm -rf /var/cache/debconfbak/
 
 #DEBHELPER#

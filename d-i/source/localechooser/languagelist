@@ -1,12 +1,10 @@
 #
 # This is the complete list of languages (locales) to choose from.
 # langcode;language (en);language (orig);supported_environments;countrycode;encoding;fallbacklocale;langlist;console-setup
-C;C;No localization;0;;;C;en;
 # Special case for Chinese as the two flavours share the same ISO 639 code
 # Both will trigger countrychooser. Each will be the backup for the other
 # one
 zh_CN;Chinese (Simplified);中文(简体);3;CN;UTF-8;zh_CN.UTF-8;zh_CN:zh;
-zh_TW;Chinese (Traditional);中文(繁體);3;TW;UTF-8;zh_TW.UTF-8;zh_TW:zh;
 en;English;English;0;US;UTF-8;en_US.UTF-8;;console-setup
 # The Esperanto locale is eo.UTF-8
 # so no country on purpose. The default country is Antarctica because...

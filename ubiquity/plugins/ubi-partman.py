@@ -919,6 +919,14 @@ class PageGtk(PageBase):
                        'crypto_overwrite_space', 'crypto_extra_time']:
             getattr(getattr(self, widget), action)()
 
+    def on_partition_size_custom_toggled(self, w):
+        if self.partition_size_custom.get_active():
+            self.partition_size_custom_entry.set_editable(True)
+            self.partition_size_custom_entry.set_sensitive(True)
+        else:            
+            self.partition_size_custom_entry.set_editable(False)            
+            self.partition_size_custom_entry.set_sensitive(False)
+
     @plugin.only_this_page
     def partman_dialog(self, devpart, partition, create=True):
         from gi.repository import Gtk, GObject
@@ -957,7 +965,7 @@ class PageGtk(PageBase):
 
         # Yes, I know, 1000000 bytes is annoying. Sorry. This is what
         # partman expects.
-        min_size_mb = 0
+        min_size_mb = 1
         cur_size_mb = 0
         max_size_mb = 0
         if create:
@@ -978,11 +986,18 @@ class PageGtk(PageBase):
                 min_size_mb = min(min_size_mb, cur_size_mb)
                 max_size_mb = max(cur_size_mb, max_size_mb)
         if max_size_mb is not 0:
-            self.partition_size_spinbutton.set_adjustment(
-                Gtk.Adjustment(value=max_size_mb, upper=max_size_mb,
-                               step_increment=1, page_increment=100))
-            self.partition_size_spinbutton.set_value(cur_size_mb)
-            current_size = str(self.partition_size_spinbutton.get_value())
+            max_label_text = "(" + str(round((max_size_mb / 1000),2)) + "GB)"
+            min_label_text = "(" + str(round(min_size_mb,2)) + "MB)"
+            custom_entry_text = str(round((cur_size_mb / 1000),2)) + "GB"
+            self.partition_size_max_label.set_text(max_label_text)
+            self.partition_size_min_label.set_text(min_label_text)
+            self.partition_size_custom_entry.set_text(custom_entry_text)
+#            self.partition_size_spinbutton.set_adjustment(
+#                Gtk.Adjustment(value=max_size_mb, upper=max_size_mb,
+#                               step_increment=1, page_increment=100))
+#            self.partition_size_spinbutton.set_value(cur_size_mb)
+#            current_size = str(self.partition_size_spinbutton.get_value())
+            current_size = str(self.partition_size_custom_entry.get_text())
         self.partition_use_combo.clear()
         renderer = Gtk.CellRendererText()
         self.partition_use_combo.pack_start(renderer, True)
@@ -1060,6 +1075,15 @@ class PageGtk(PageBase):
         self.partition_dialog.hide()
 
         if create and (response == Gtk.ResponseType.OK):
+            #retrive size
+            size = None
+            if self.partition_size_max.get_active():
+                size = str(max_size_mb)
+            elif self.partition_size_min.get_active():
+                size = str(min_size_mb)
+            elif self.partition_size_custom.get_active():
+                size = str(int(self.partition_size_custom_entry.get_text()) * 1000)
+    
             if partition['parted']['type'] == 'primary':
                 prilog = PARTITION_TYPE_PRIMARY
             elif partition['parted']['type'] == 'logical':
@@ -1088,13 +1112,19 @@ class PageGtk(PageBase):
             self.controller.allow_change_step(False)
             self.controller.dbfilter.create_partition(
                 devpart,
-                str(self.partition_size_spinbutton.get_value()),
+                size,
                 prilog, place, method, mountpoint)
 
         if not create and (response == Gtk.ResponseType.OK):
             size = None
             if current_size is not None:
-                size = str(self.partition_size_spinbutton.get_value())
+#                size = str(self.partition_size_spinbutton.get_value())
+                if self.partition_size_max.get_active():
+                    size = str(max_size_mb)
+                elif self.partition_size_min.get_active():
+                    size = str(min_size_mb + 1)
+                elif self.partition_size_custom.get_active():
+                    size = str(self.partition_size_custom_entry.get_text())
 
             method_iter = self.partition_use_combo.get_active_iter()
             if method_iter is None:

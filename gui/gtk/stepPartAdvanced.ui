@@ -1,6 +1,478 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkDialog" id="partition_dialog">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Create partition</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="type_hint">dialog</property>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="dialog-vbox7">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkGrid" id="partition_dialog_grid">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="valign">start</property>
+            <property name="border_width">6</property>
+            <property name="row_spacing">6</property>
+            <property name="column_spacing">6</property>
+            <child>
+              <object class="GtkLabel" id="partition_size_label">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="xalign">1</property>
+                <property name="yalign">0</property>
+                <property name="label" translatable="yes">Size:</property>
+                <property name="wrap">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="partition_create_place_label">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="xalign">1</property>
+                <property name="yalign">0</property>
+                <property name="label" translatable="yes">Location:</property>
+                <property name="single_line_mode">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="partition_use_label">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="xalign">1</property>
+                <property name="label" translatable="yes">Use as:</property>
+                <property name="single_line_mode">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">3</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="partition_use_combo">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="hexpand">True</property>
+                <accessibility>
+                  <relation type="labelled-by" target="partition_use_label"/>
+                </accessibility>
+                <signal name="changed" handler="on_partition_use_combo_changed" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="partition_mount_label">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="xalign">1</property>
+                <property name="label" translatable="yes">Mount point:</property>
+                <property name="single_line_mode">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">5</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="partition_mount_combo">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="has_entry">True</property>
+                <accessibility>
+                  <relation type="labelled-by" target="partition_mount_label"/>
+                </accessibility>
+                <child internal-child="entry">
+                  <object class="GtkEntry" id="combobox-entry4">
+                    <property name="can_focus">True</property>
+                    <property name="invisible_char">•</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">5</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkGrid" id="partition_place_grid">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="row_spacing">6</property>
+                <child>
+                  <object class="GtkRadioButton" id="partition_create_place_beginning">
+                    <property name="label" translatable="yes">Beginning of this space</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="use_underline">True</property>
+                    <property name="xalign">0</property>
+                    <property name="active">True</property>
+                    <property name="draw_indicator">True</property>
+                    <accessibility>
+                      <relation type="labelled-by" target="partition_create_place_label"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioButton" id="partition_create_place_end">
+                    <property name="label" translatable="yes">End of this space</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="use_underline">True</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                    <property name="group">partition_create_place_beginning</property>
+                    <accessibility>
+                      <relation type="labelled-by" target="partition_create_place_label"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkGrid" id="partition_size_grid">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="row_spacing">6</property>
+                <child>
+                  <object class="GtkRadioButton" id="partition_size_min">
+                    <property name="label" translatable="yes">Min size</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="receives_default">False</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                    <property name="group">partition_size_max</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioButton" id="partition_size_custom">
+                    <property name="label" translatable="yes">Custom</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="receives_default">False</property>
+                    <property name="relief">none</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                    <property name="group">partition_size_max</property>
+                    <signal name="clicked" handler="on_partition_size_custom_toggled" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">2</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioButton" id="partition_size_max">
+                    <property name="label" translatable="yes">Max size</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="receives_default">False</property>
+                    <property name="xalign">0</property>
+                    <property name="active">True</property>
+                    <property name="draw_indicator">True</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="partition_size_custom_entry">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="editable">False</property>
+                    <property name="sensitive">False</property>
+                    <property name="max_length">5</property>
+                    <property name="width_chars">10</property>
+                    <property name="input_purpose">number</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">2</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="partition_size_custom_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="xalign">0.20000000298023224</property>
+                    <property name="label" translatable="yes">GB</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="top_attach">2</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="partition_size_min_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="xalign">0.20000000298023224</property>
+                    <property name="label" translatable="yes">(42.00MB)</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="partition_size_max_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="xalign">0.20000000298023224</property>
+                    <property name="label" translatable="yes">Max size</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="partition_create_type_label">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="xalign">1</property>
+                <property name="yalign">0</property>
+                <property name="label" translatable="yes">Type:</property>
+                <property name="single_line_mode">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkGrid" id="partiation_types_grid">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="row_spacing">6</property>
+                <child>
+                  <object class="GtkRadioButton" id="partition_create_type_primary">
+                    <property name="label" translatable="yes">Primary</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="use_underline">True</property>
+                    <property name="xalign">0</property>
+                    <property name="active">True</property>
+                    <property name="draw_indicator">True</property>
+                    <accessibility>
+                      <relation type="labelled-by" target="partition_create_type_label"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkRadioButton" id="partition_create_type_logical">
+                    <property name="label" translatable="yes">Logical</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="use_underline">True</property>
+                    <property name="xalign">0</property>
+                    <property name="draw_indicator">True</property>
+                    <property name="group">partition_create_type_primary</property>
+                    <accessibility>
+                      <relation type="labelled-by" target="partition_create_type_label"/>
+                    </accessibility>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">1</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="partition_edit_format_checkbutton">
+                <property name="label" translatable="yes">Format the partition</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="xalign">0</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">4</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="dialog-action_area7">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="partition_encryption_settings">
+                <property name="label" translatable="yes">Encryption options...</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="cancelbutton1">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="partition_dialog_okbutton">
+                <property name="label">gtk-ok</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="has_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="0">partition_encryption_settings</action-widget>
+      <action-widget response="-6">cancelbutton1</action-widget>
+      <action-widget response="-5">partition_dialog_okbutton</action-widget>
+    </action-widgets>
+  </object>
   <object class="GtkDialog" id="partition_encryption_options">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">Encryption Options</property>
@@ -558,474 +1030,6 @@ Logical Volume Management (LVM) lets Linux Mint treat multiple physical volumes 
     <action-widgets>
       <action-widget response="-6">cancelbutton3</action-widget>
       <action-widget response="-5">okbutton3</action-widget>
-    </action-widgets>
-  </object>
-  <object class="GtkDialog" id="partition_dialog">
-    <property name="can_focus">False</property>
-    <property name="title" translatable="yes">Create partition</property>
-    <property name="resizable">False</property>
-    <property name="modal">True</property>
-    <property name="window_position">center-on-parent</property>
-    <property name="type_hint">dialog</property>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox7">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkGrid" id="partition_dialog_grid">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="valign">start</property>
-            <property name="border_width">6</property>
-            <property name="row_spacing">6</property>
-            <property name="column_spacing">6</property>
-            <child>
-              <object class="GtkLabel" id="partition_size_label">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="xalign">1</property>
-                <property name="yalign">0</property>
-                <property name="label" translatable="yes">Size:</property>
-                <property name="wrap">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="partition_create_place_label">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="xalign">1</property>
-                <property name="yalign">0</property>
-                <property name="label" translatable="yes">Location:</property>
-                <property name="single_line_mode">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">2</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="partition_use_label">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="xalign">1</property>
-                <property name="label" translatable="yes">Use as:</property>
-                <property name="single_line_mode">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">3</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkComboBox" id="partition_use_combo">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="halign">start</property>
-                <property name="hexpand">True</property>
-                <accessibility>
-                  <relation type="labelled-by" target="partition_use_label"/>
-                </accessibility>
-                <signal name="changed" handler="on_partition_use_combo_changed" swapped="no"/>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">3</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="partition_mount_label">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="xalign">1</property>
-                <property name="label" translatable="yes">Mount point:</property>
-                <property name="single_line_mode">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">5</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkComboBox" id="partition_mount_combo">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="halign">start</property>
-                <property name="has_entry">True</property>
-                <accessibility>
-                  <relation type="labelled-by" target="partition_mount_label"/>
-                </accessibility>
-                <child internal-child="entry">
-                  <object class="GtkEntry" id="combobox-entry4">
-                    <property name="can_focus">True</property>
-                    <property name="invisible_char">•</property>
-                  </object>
-                </child>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">5</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkGrid" id="partition_place_grid">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="row_spacing">6</property>
-                <child>
-                  <object class="GtkRadioButton" id="partition_create_place_beginning">
-                    <property name="label" translatable="yes">Beginning of this space</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_underline">True</property>
-                    <property name="xalign">0</property>
-                    <property name="active">True</property>
-                    <property name="draw_indicator">True</property>
-                    <accessibility>
-                      <relation type="labelled-by" target="partition_create_place_label"/>
-                    </accessibility>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkRadioButton" id="partition_create_place_end">
-                    <property name="label" translatable="yes">End of this space</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_underline">True</property>
-                    <property name="xalign">0</property>
-                    <property name="draw_indicator">True</property>
-                    <property name="group">partition_create_place_beginning</property>
-                    <accessibility>
-                      <relation type="labelled-by" target="partition_create_place_label"/>
-                    </accessibility>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">1</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">2</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkGrid" id="partition_size_grid">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="row_spacing">6</property>
-                <child>
-                  <object class="GtkRadioButton" id="partition_size_min">
-                    <property name="label" translatable="yes">Min size</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="receives_default">False</property>
-                    <property name="xalign">0</property>
-                    <property name="draw_indicator">True</property>
-                    <property name="group">partition_size_max</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">1</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkRadioButton" id="partition_size_custom">
-                    <property name="label" translatable="yes">Custom</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="receives_default">False</property>
-                    <property name="relief">none</property>
-                    <property name="xalign">0</property>
-                    <property name="draw_indicator">True</property>
-                    <property name="group">partition_size_max</property>
-                    <signal name="clicked" handler="on_partition_size_custom_toggled" swapped="no"/>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">2</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkRadioButton" id="partition_size_max">
-                    <property name="label" translatable="yes">Max size</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="receives_default">False</property>
-                    <property name="xalign">0</property>
-                    <property name="active">True</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkEntry" id="partition_size_custom_entry">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="width_chars">10</property>
-                    <property name="input_purpose">number</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="top_attach">2</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="partition_size_custom_label">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="xalign">0.20000000298023224</property>
-                    <property name="label" translatable="yes">GB</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="top_attach">2</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="partition_size_min_label">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="xalign">0.20000000298023224</property>
-                    <property name="label" translatable="yes">(42.00MB)</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="top_attach">1</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="partition_size_max_label">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Max size</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="partition_create_type_label">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="xalign">1</property>
-                <property name="yalign">0</property>
-                <property name="label" translatable="yes">Type:</property>
-                <property name="single_line_mode">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">1</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkGrid" id="partiation_types_grid">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="row_spacing">6</property>
-                <child>
-                  <object class="GtkRadioButton" id="partition_create_type_primary">
-                    <property name="label" translatable="yes">Primary</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_underline">True</property>
-                    <property name="xalign">0</property>
-                    <property name="active">True</property>
-                    <property name="draw_indicator">True</property>
-                    <accessibility>
-                      <relation type="labelled-by" target="partition_create_type_label"/>
-                    </accessibility>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkRadioButton" id="partition_create_type_logical">
-                    <property name="label" translatable="yes">Logical</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_underline">True</property>
-                    <property name="xalign">0</property>
-                    <property name="draw_indicator">True</property>
-                    <property name="group">partition_create_type_primary</property>
-                    <accessibility>
-                      <relation type="labelled-by" target="partition_create_type_label"/>
-                    </accessibility>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">1</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">1</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="partition_edit_format_checkbutton">
-                <property name="label" translatable="yes">Format the partition</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="xalign">0</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">4</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area7">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
-            <child>
-              <object class="GtkButton" id="partition_encryption_settings">
-                <property name="label" translatable="yes">Encryption options...</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="cancelbutton1">
-                <property name="label">gtk-cancel</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_underline">True</property>
-                <property name="use_stock">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="partition_dialog_okbutton">
-                <property name="label">gtk-ok</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="has_default">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_underline">True</property>
-                <property name="use_stock">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">2</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="pack_type">end</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-    <action-widgets>
-      <action-widget response="0">partition_encryption_settings</action-widget>
-      <action-widget response="-6">cancelbutton1</action-widget>
-      <action-widget response="-5">partition_dialog_okbutton</action-widget>
     </action-widgets>
   </object>
   <object class="GtkAlignment" id="stepPartAdvanced">

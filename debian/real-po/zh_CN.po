@@ -712,8 +712,8 @@ msgstr "创建分区"
 #. Type: text
 #. Description
 #: ../ubiquity.templates:104001
-msgid "Size:"
-msgstr "大小："
+msgid "New partition size:"
+msgstr "新分区的尺寸："
 
 #. Type: text
 #. Description
@@ -1975,18 +1975,36 @@ msgstr "加密选项..."
 #. Type: text
 #. Description
 #: ../ubiquity.templates:286001
+msgid "Min size"
+msgstr "最小尺寸"
+
+#. Type: text
+#. Description
+#: ../ubiquity.templates:287001
+msgid "Max size"
+msgstr "最大尺寸"
+
+#. Type: text
+#. Description
+#: ../ubiquity.templates:288001
+msgid "Custom size"
+msgstr "自定义尺寸"
+
+#. Type: text
+#. Description
+#: ../ubiquity.templates:289001
 msgid "You should use at least six alphanumeric and symbols, amount"
 msgstr "至少使用六个字符（其中数字或大写字母或它们的组合个数"
 
 #. Type: text
 #. Description
-#: ../ubiquity.templates:287001
+#: ../ubiquity.templates:290001
 msgid "of digit or upper or both of them should greater than 3. eg 123*ac"
 msgstr "不小于三，并且至少包含一个符号)作为密码,例如123*ac"
 
 #. Type: text
 #. Description
-#: ../ubiquity.templates:288001
+#: ../ubiquity.templates:291001
 msgid "Are you sure?"
 msgstr "您确定吗？"
 

@@ -710,7 +710,7 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:104001
-msgid "Size:"
+msgid "New partition size:"
 msgstr ""
 
 #. Type: text
@@ -1923,12 +1923,30 @@ msgstr ""
 #. Type: text
 #. Description
 #: ../ubiquity.templates:286001
-msgid "You should use at least six alphanumeric or symbols, amount"
+msgid "Min size"
 msgstr ""
 
 #. Type: text
 #. Description
 #: ../ubiquity.templates:287001
+msgid "Max size"
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../ubiquity.templates:288001
+msgid "Custom size"
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../ubiquity.templates:289001
+msgid "You should use at least six alphanumeric or symbols, amount"
+msgstr ""
+
+#. Type: text
+#. Description
+#: ../ubiquity.templates:290001
 msgid "of digit or upper or both of them should greater than 3. eg 123*ac"
 msgstr ""
 

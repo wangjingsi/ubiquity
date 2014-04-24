@@ -988,15 +988,10 @@ class PageGtk(PageBase):
         if max_size_mb is not 0:
             max_label_text = "(" + str(round((max_size_mb / 1000),2)) + "GB)"
             min_label_text = "(" + str(round(min_size_mb,2)) + "MB)"
-            custom_entry_text = str(round((cur_size_mb / 1000),2)) + "GB"
+            custom_entry_text = str(round((max_size_mb / 1000),2))
             self.partition_size_max_label.set_text(max_label_text)
             self.partition_size_min_label.set_text(min_label_text)
             self.partition_size_custom_entry.set_text(custom_entry_text)
-#            self.partition_size_spinbutton.set_adjustment(
-#                Gtk.Adjustment(value=max_size_mb, upper=max_size_mb,
-#                               step_increment=1, page_increment=100))
-#            self.partition_size_spinbutton.set_value(cur_size_mb)
-#            current_size = str(self.partition_size_spinbutton.get_value())
             current_size = str(self.partition_size_custom_entry.get_text())
         self.partition_use_combo.clear()
         renderer = Gtk.CellRendererText()

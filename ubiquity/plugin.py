@@ -39,6 +39,8 @@ class PluginUI(UntrustedBase):
 
     def find_change(self, widget):
         self.entry_text = widget.get_text()
+        self.entry_text_posi = self.text.upper().find(self.entry_text.upper())
+        self.entry_text = self.text[self.entry_text_posi:len(self.entry_text)+self.entry_text_posi]
         self.label_info.set_text(self.text)
         self.changetext = self.text.replace(self.entry_text, "<span color=\"lightseagreen\">"+self.entry_text+"</span>")
         self.label_info.set_markup(self.changetext)

@@ -501,7 +501,7 @@ _Description: Create partition
 
 Template: ubiquity/text/partition_size_label
 Type: text
-_Description: Size:
+_Description: New partition size:
 
 Template: ubiquity/text/partition_create_place_beginning
 Type: text
@@ -1526,3 +1526,15 @@ Template:ubiquity/text/partition_encryption_settings
 Type: text
 _Description:
  Encryption options...
+
+Template: ubiquity/text/partition_size_min
+Type: text
+_Description: Min size
+
+Template: ubiquity/text/partition_size_max
+Type: text
+_Description: Max size
+
+Template: ubiquity/text/partition_size_custom
+Type: text
+_Description: Custom size

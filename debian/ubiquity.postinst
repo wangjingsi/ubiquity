@@ -7,9 +7,6 @@ if [ -e /etc/rc2.d/S20ubiquity ]; then
 	update-rc.d -f ubiquity remove >/dev/null 2>&1
 fi
 
-mv /var/cache/debconfbak/zone.tab /usr/share/zoneinfo
-rm -rf /var/cache/debconfbak/
-
 #DEBHELPER#
 
 exit 0

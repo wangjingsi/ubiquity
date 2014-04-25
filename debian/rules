@@ -119,6 +119,8 @@ endif
 	dh_di_numbers
 
 	# Bits of manual installation that can't be done by dh_install
+	mkdir -p debian/ubiquity/var/cache/ubi-mdm
+	install $(CURDIR)/mdm.conf debian/ubiquity/var/cache/ubi-mdm
 	install bin/ubiquity-wrapper debian/ubiquity/usr/bin/ubiquity
 	sed 's/@VERSION@/$(VERSION)/g' bin/ubiquity \
 		> debian/ubiquity/usr/lib/ubiquity/bin/ubiquity

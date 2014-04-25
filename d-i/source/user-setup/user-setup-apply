@@ -423,4 +423,9 @@ else
 	db_set passwd/user-password-again ''
 fi
 
+if [ -d "$ROOT/var/cache/ubi-mdm" ]; then 
+    $chroot $ROOT /bin/bash -c "mv /var/cache/ubi-mdm/mdm.conf /etc/mdm/mdm.conf"
+    $chroot $ROOT /bin/bash -c "rm -rf /var/cache/ubi-mdm"
+fi
+
 exit 0

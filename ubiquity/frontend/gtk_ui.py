@@ -1473,7 +1473,6 @@ class Wizard(BaseFrontend):
         if hasattr(self.myui, 'plugin_on_help_clicked'):
             self.myui.plugin_on_help_clicked()
 #end wangjingsi
-
     def on_back_clicked(self, unused_widget):
         """Callback to set previous screen."""
         if not self.allowed_change_step:

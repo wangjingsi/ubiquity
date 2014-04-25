@@ -162,6 +162,7 @@ class PageBase(plugin.PluginUI):
 class PageGtk(PageBase):
     plugin_title = 'ubiquity/text/userinfo_heading_label'
     help_dialog = 'help_usersetup' #add by wangjingsi
+    help_label = 'usersetup_text_label' #add by wangjingsi
 
     def __init__(self, controller, *args, **kwargs):
         from gi.repository import Gio, Gtk
@@ -210,6 +211,7 @@ class PageGtk(PageBase):
         # okay check icon and the hostname error messages.
         paddingbox = builder.get_object('paddingbox')
 
+
         def func(box):
             box.get_parent().child_set_property(box, 'expand', False)
             box.set_size_request(box.get_allocation().width / 2, -1)
@@ -243,7 +245,7 @@ class PageGtk(PageBase):
 
 #add by wangjingsi
     def plugin_on_help_clicked(self):
-        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui',self.help_dialog)
+        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui', self.help_dialog, self.help_label)
 #end by wangjingsi
 
     def plugin_translate(self, lang):

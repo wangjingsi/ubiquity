@@ -34,6 +34,7 @@ WEIGHT = 10
 class PageGtk(plugin.PluginUI):
     plugin_title = 'ubiquity/text/keyboard_heading_label'
     help_dialog = 'help_console-setup' #add by wangjingsi
+    help_label = 'console-setup_text_label' #add by wangjingsi
 
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
@@ -62,7 +63,7 @@ class PageGtk(plugin.PluginUI):
 
 #add by wangjingsi
     def plugin_on_help_clicked(self):
-        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui',self.help_dialog)
+        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui', self.help_dialog, self.help_label)
 #end by wangjingsi
 
     def plugin_translate(self, lang):

@@ -6,6 +6,7 @@
     <property name="height_request">400</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">帮助</property>
+    <property name="resizable">False</property>
     <property name="modal">True</property>
     <property name="window_position">center-on-parent</property>
     <property name="type_hint">dialog</property>
@@ -20,6 +21,22 @@
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
+              <object class="GtkEntry" id="entry1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">●</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="closebutton7">
                 <property name="label">gtk-close</property>
                 <property name="visible">True</property>
@@ -33,13 +50,13 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">0</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
           <packing>
             <property name="expand">False</property>
-            <property name="fill">True</property>
+            <property name="fill">False</property>
             <property name="pack_type">end</property>
             <property name="position">0</property>
           </packing>
@@ -82,17 +99,31 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="crash_text_label6">
+                  <object class="GtkLabel" id="PartAdvanced_text_label">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">PartAdvanced</property>
-                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">      文件系统：推荐使用 EXT4 文件系统。    &#13;　　格式化：对于一个分区是否格式化，要看分区所承载的内容，一般建议根分区格式化，
+其他分区如 /home 的可以根据用户自己的选择是否格式化，因为 /home 分区保存的是个
+人数据。  
+&#13;　　分区标签：卷标，给分区起个名字    &#13;　　挂载点：对于COS桌面操作系统，根分区是必需的，而且只能有一个，类似于
+ Windows 系统的 C 盘。交换分区类似于虚拟内存，建议的大小是和物理内存一样，小于
+2G。  
+&#13;      硬盘分区有三种，主磁盘分区、扩展磁盘分区、逻辑分区。在Windows系统中，是先
+将物理地址分开(分出主磁盘分区和逻辑分区)，再在分区上建立目录，所以所有路径都是从
+盘符开始，如C://Program Files。而COS桌面正好相反，是先有目录，再将物理地址(分区)
+映射到目录中，因此在COS桌面中，所有路径都是从根目录开始【/】。
+&#13;      各常见分区介绍:
+&#13;      / 根分区：是整个系统的根目录，是COS桌面操作系统必需的分区；
+&#13;      /swap 分区：是暂时存储数据的交换分区，也是COS桌面必需的分区，通常分配给其的
+大小为物理内存的2倍；
+&#13;      /home 分区 ：用来保存个人用户数据，建议独立挂载；
+&#13;      /usr 分区：系统存放软件的地方，如有可能应将尽量大空间分给它。</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="padding">6</property>
+                    <property name="padding">12</property>
                     <property name="position">2</property>
                   </packing>
                 </child>
@@ -143,6 +174,22 @@
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
+              <object class="GtkEntry" id="entry2">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">●</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="closebutton6">
                 <property name="label">gtk-close</property>
                 <property name="visible">True</property>
@@ -156,7 +203,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">0</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
@@ -205,17 +252,22 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="crash_text_label5">
+                  <object class="GtkLabel" id="PartAuto_text_label">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">PartAuto</property>
-                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">　　COS桌面操作系统支持在一台计算机上安装多个操作系统，它通过GRUB多重启动管理
+器来支持多操作系统并存，GRUB可以引导多个操作系统。计算机启动时，用户可以使用
+GRUB提供的菜单来选择需要启动的系统。因此，不必担心在安装COS桌面操作系统后，导
+致其他操作系统不能使用问题的发生。
+&#13;　　GRUB是Grand Unified Boot Loader的缩写，是一个功能强大的引导程序，专门解决
+Linux类操作系统和其他操作系统的共存问题。它可以引导操作大硬盘、支持开机画面及单
+式选择，并且分区位置改变后不必重新配置，使用非常方便。</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="padding">6</property>
+                    <property name="padding">12</property>
                     <property name="position">2</property>
                   </packing>
                 </child>
@@ -266,6 +318,22 @@
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
+              <object class="GtkEntry" id="entry3">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">●</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="closebutton3">
                 <property name="label">gtk-close</property>
                 <property name="visible">True</property>
@@ -279,7 +347,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">0</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
@@ -328,17 +396,17 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="crash_text_label2">
+                  <object class="GtkLabel" id="PartCrypto_text_label">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">PartCrypto</property>
-                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">　　磁盘加密使用强大的加密算法对存储在计算机和笔记本电脑硬盘上的数据进行自动保
+护。用户可以通过提前设定的密钥来访问这些受保护的数据。</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="padding">6</property>
+                    <property name="padding">12</property>
                     <property name="position">2</property>
                   </packing>
                 </child>
@@ -389,6 +457,22 @@
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
+              <object class="GtkEntry" id="entry4">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">●</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="closebutton4">
                 <property name="label">gtk-close</property>
                 <property name="visible">True</property>
@@ -402,7 +486,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">0</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
@@ -451,17 +535,21 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="crash_text_label3">
+                  <object class="GtkLabel" id="console-setup_text_label">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">console-setup</property>
-                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">　　键盘布局：计算机、打字机或其他类似设备的按键在键盘上的安排方式。所使用的键盘
+布局由计算机中的软件决定， 按键上的字符表示键盘的标准布局。，全世界采用许多不同的
+键盘布局。实际的键盘布局取决于所在的国家或使用的语言。
+&#13;　　死键：也叫结合键，在单击的时候不产生字符，但是会修改随后一个按键的输入结果。
+在有些系统里，单击此键无显示，但是在在有些文本输入系统里会显示一个等候输入的标
+记，等候输入主体字母或是敲击空格输入单独的附加符号 。</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="padding">6</property>
+                    <property name="padding">12</property>
                     <property name="position">2</property>
                   </packing>
                 </child>
@@ -498,6 +586,7 @@
     <property name="height_request">400</property>
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">帮助</property>
+    <property name="resizable">False</property>
     <property name="modal">True</property>
     <property name="window_position">center-on-parent</property>
     <property name="type_hint">dialog</property>
@@ -512,6 +601,22 @@
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
+              <object class="GtkEntry" id="entry5">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">●</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="closebutton1">
                 <property name="label">gtk-close</property>
                 <property name="visible">True</property>
@@ -525,7 +630,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">0</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
@@ -574,17 +679,18 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="crash_text_label">
+                  <object class="GtkLabel" id="language_text_label">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">选择安装程序界面语言，默认选择中文（简体）</property>
-                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">　　安装程序界面所显示的语言，选择熟悉语言，方便安装。目前提供“中文（简
+体）”和“English”，默认选择“中文（简体）”</property>
+                    <property name="use_markup">True</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="padding">6</property>
+                    <property name="padding">12</property>
                     <property name="position">2</property>
                   </packing>
                 </child>
@@ -635,6 +741,22 @@
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
+              <object class="GtkEntry" id="entry6">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">●</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="closebutton2">
                 <property name="label">gtk-close</property>
                 <property name="visible">True</property>
@@ -648,7 +770,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">0</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
@@ -697,31 +819,29 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="crash_text_label1">
+                  <object class="GtkLabel" id="partman_text_label">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">partman</property>
-                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">      清楚整个磁盘安装COS桌面操作系统：此模式将清空硬盘所有数据，自动分区安装COS
+桌面操作系统，并且无法选择分区大小。
+
+      安装COS桌面操作系统与现存系统共存：当安装程序识别出当前磁盘已经安装有操作系
+统时，当前页面会自动出现此选项，选择此模式将保留之前安装的操作系统和个人用户数
+据，并且自动分区安装COS桌面操作系统。当系统没有空闲空间或者不足时，可能需要删除
+硬盘出现的一个分区。
+
+      将现存系统替换为COS桌面操作系统：此模式将会删除现存的系统，并且自动安装COS
+桌面操作系统，磁盘之前安装的系统和数据将全部删除。
+
+      专家模式：此模式可以进行手动的分区配置，需要您熟悉一定的Linux分区知识，有经
+验的用户或者需要自定义配置用户建议选择此模式。</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="padding">6</property>
+                    <property name="padding">12</property>
                     <property name="position">2</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="crash_detail_label1">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="xalign">0</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">False</property>
-                    <property name="padding">6</property>
-                    <property name="position">3</property>
                   </packing>
                 </child>
               </object>
@@ -758,6 +878,22 @@
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
+              <object class="GtkEntry" id="entry7">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">●</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="closebutton5">
                 <property name="label">gtk-close</property>
                 <property name="visible">True</property>
@@ -771,7 +907,7 @@
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">0</property>
+                <property name="position">1</property>
               </packing>
             </child>
           </object>
@@ -820,17 +956,26 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="crash_text_label4">
+                  <object class="GtkLabel" id="usersetup_text_label">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">usersetup</property>
-                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">　　程序将创建一个用来取代root执行非管理任务的普通用户账号。
+&#13;　　在COS桌面操作系统中用户是分角色的，由于角色不同，所拥有的权限和所完成的任务
+也不同，用户的角色是通过UID确定。在系统管理中，系统管理员一定要坚守UID 唯一的特
+性。
+&#13;　　root 用户：系统唯一，是真实的，可以登录系统，可以操作系统任何文件和命令，拥有
+最高权限。
+&#13;　　普通用户：这类用户能登录系统，但只能操作自己家目录的内容；权限有限；这类用户
+都是系统管理员自行添加的。
+&#13;　　虚拟用户：这类用户也被称之为伪用户或假用户，与真实用户区分开来，这类用户不具
+有登录系统的能力，但却是系统运行不可缺少的用户，比如bin、daemon、adm、ftp、
+mail等；这类用户都系统自身拥有的，而非后来添加的，我们也可以添加虚拟用户。</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="padding">6</property>
+                    <property name="padding">12</property>
                     <property name="position">2</property>
                   </packing>
                 </child>

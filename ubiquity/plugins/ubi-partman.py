@@ -109,6 +109,7 @@ class PageGtk(PageBase):
     plugin_title = 'ubiquity/text/part_auto_heading_label'
     plugin_is_install = True
     help_dialog = 'help_partman' #add by wangjingsi
+    help_label = 'partman_text_label' #add by wangjingsi
 
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
@@ -204,7 +205,7 @@ class PageGtk(PageBase):
 
 #add by wangjingsi
     def plugin_on_help_clicked(self):
-        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui',self.help_dialog)
+        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui', self.help_dialog, self.help_label)
 #end by wangjingsi
 
     def plugin_get_current_page(self):
@@ -285,7 +286,9 @@ class PageGtk(PageBase):
 
         if custom:
             self.help_dialog = 'help_PartAdvanced' #add by wangjingsi
-            self.set_page_title(self.custom_partitioning.get_label())
+            self.help_label = 'PartAdvanced_text_label' #add by wangjingsi
+            #self.set_page_title(self.custom_partitioning.get_label())
+            self.set_page_title('安装类型') #change by wangjingsi
             self.current_page = self.page_advanced
             self.move_crypto_widgets(auto=False)
             self.controller.go_to_page(self.current_page)
@@ -309,6 +312,7 @@ class PageGtk(PageBase):
         # to here? This needs to be addressed in the design document.
         if crypto and use_device and self.current_page == self.page_ask:
             self.help_dialog = 'help_PartCrypto' #add by wangjingsi
+            self.help_label = 'PartCrypto_text_label' #add by wangjingsi
             self.set_page_title(
                 self.controller.get_string('ubiquity/text/crypto_label'))
             self.current_page = self.page_crypto
@@ -337,6 +341,7 @@ class PageGtk(PageBase):
                 and not done_partitioning):
             if resize:
                 self.help_dialog = 'help_PartAuto' #add by wangjingsi
+                self.help_label = 'PartAuto_text_label' #add by wangjingsi
                 self.set_page_title(self.resize_use_free.get_label())
                 if 'wubi' in self.extra_options:
                     self.configure_wubi_and_reboot()
@@ -372,6 +377,7 @@ class PageGtk(PageBase):
 
     def plugin_on_back_clicked(self):
         self.help_dialog = 'help_partman' #add by wangjingsi
+        self.help_label = 'partman_text_label' #add by wangjingsi
         if self.current_page in [self.page_auto, self.page_crypto]:
             title = self.controller.get_string(self.plugin_title)
             self.controller._wizard.page_title.set_markup(

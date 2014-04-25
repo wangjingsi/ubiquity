@@ -21,7 +21,6 @@
 from ubiquity.filteredcommand import FilteredCommand, UntrustedBase
 from gi.repository import Gtk #add by wangjingsi
 
-
 class PluginUI(UntrustedBase):
     # We define an init even if empty so that arguments that we give but are
     # not used don't cause an error.
@@ -29,14 +28,23 @@ class PluginUI(UntrustedBase):
         pass
 
 #add by wangjingsi
-    def show_help(self,uipath,objectname):
+    def show_help(self,uipath,objectname,labelname):
         self.builder = Gtk.Builder()
         self.builder.add_from_file(uipath)
         self.builder.connect_signals(self)
         self.window = self.builder.get_object(objectname)
+        self.label_info = self.builder.get_object(labelname)
+        self.text = self.label_info.get_text()
         self.window.show_all()
 
+    def find_change(self, widget):
+        self.entry_text = widget.get_text()
+        self.label_info.set_text(self.text)
+        self.changetext = self.text.replace(self.entry_text, "<span color=\"lightseagreen\">"+self.entry_text+"</span>")
+        self.label_info.set_markup(self.changetext)
+        
     def closs_help(self,argc):
+        self.label_info.set_text(self.text)
         self.window.destroy()
 #end wangjingsi
 

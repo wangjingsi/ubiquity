@@ -68,9 +68,6 @@ class PageBase(plugin.PluginUI):
 class PageGtk(PageBase):
     plugin_is_language = True
     plugin_title = 'ubiquity/text/language_heading_label'
-    #plugin_help = 'this is help in welcome'
-    #helpfile= open("language_help.txt")
-    #plugin_help = helpfile.read()
     help_dialog = 'help_language' #add by wangjingsi
     help_label = 'language_text_label' #add by wangjingsi
 

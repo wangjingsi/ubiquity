@@ -41,6 +41,8 @@ _geoname_url = 'http://geoname-lookup.ubuntu.com/?query=%s&release=%s'
 
 class PageGtk(plugin.PluginUI):
     plugin_title = 'ubiquity/text/timezone_heading_label'
+    help_dialog = 'help_timezone' #add by wangjingsi
+    help_label = 'timezone_text_label' #add by wangjingsi
 
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
@@ -62,6 +64,11 @@ class PageGtk(plugin.PluginUI):
         self.geoname_session = None
         self.geoname_timeout_id = None
         self.online = False
+
+#add by wangjingsi
+    def plugin_on_help_clicked(self):
+        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui', self.help_dialog, self.help_label)
+#end by wangjingsi
 
     def plugin_set_online_state(self, state):
         self.online = state

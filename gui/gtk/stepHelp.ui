@@ -683,8 +683,8 @@ Linux类操作系统和其他操作系统的共存问题。它可以引导操作
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="xalign">0</property>
-                    <property name="label" translatable="yes">　　安装程序界面所显示的语言，选择熟悉语言，方便安装。目前提供“中文（简
-体）”和“English”，默认选择“中文（简体）”</property>
+                    <property name="label" translatable="yes">　　安装程序界面所显示的语言，选择熟悉语言，方便安装。目前提供“中文（简体）”
+和“English”，默认选择“中文（简体）”</property>
                     <property name="use_markup">True</property>
                   </object>
                   <packing>
@@ -835,7 +835,14 @@ Linux类操作系统和其他操作系统的共存问题。它可以引导操作
 桌面操作系统，磁盘之前安装的系统和数据将全部删除。
 
       专家模式：此模式可以进行手动的分区配置，需要您熟悉一定的Linux分区知识，有经
-验的用户或者需要自定义配置用户建议选择此模式。</property>
+验的用户或者需要自定义配置用户建议选择此模式。
+
+　　为了安全起见，将会加密你的新COS桌面操作系统：勾选此项将会加密安装程序，不建
+议新手用户勾选。
+&#13;　　给新安装的COS桌面操作系统使用LVM：LVM是 Logical Volume Manager（逻辑卷
+管理）的简写，它是Linux环境下对磁盘分区进行管理的一种机制，利用Linux内核的
+device-mapper来实现存储系统的虚拟化（系统分区独立于底层硬件）。不建议新手用户
+勾选。</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -858,6 +865,95 @@ Linux类操作系统和其他操作系统的共存问题。它可以引导操作
     <action-widgets>
       <action-widget response="-7">closebutton2</action-widget>
     </action-widgets>
+  </object>
+  <object class="GtkDialog" id="help_timezone">
+    <property name="width_request">500</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">帮助</property>
+    <property name="modal">True</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="type_hint">dialog</property>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="dialog-vbox13">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkAlignment" id="alignment7">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="border_width">6</property>
+            <child>
+              <object class="GtkBox" id="vbox7">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkLabel" id="help_title7">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+                    <property name="use_markup">True</property>
+                    <property name="single_line_mode">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkHSeparator" id="hseparator7">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">6</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="timezone_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">      点击地图，通过选择所在地设置时间。默认为北京时间。</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">False</property>
+                    <property name="padding">12</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="crash_detail_label1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="xalign">0</property>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">False</property>
+                    <property name="padding">6</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
   </object>
   <object class="GtkDialog" id="help_usersetup">
     <property name="width_request">500</property>
@@ -967,10 +1063,13 @@ Linux类操作系统和其他操作系统的共存问题。它可以引导操作
 &#13;　　root 用户：系统唯一，是真实的，可以登录系统，可以操作系统任何文件和命令，拥有
 最高权限。
 &#13;　　普通用户：这类用户能登录系统，但只能操作自己家目录的内容；权限有限；这类用户
-都是系统管理员自行添加的。
+都是系统管理员自行添加的，但用户名不可使用系统保留的虚拟用户名。
 &#13;　　虚拟用户：这类用户也被称之为伪用户或假用户，与真实用户区分开来，这类用户不具
 有登录系统的能力，但却是系统运行不可缺少的用户，比如bin、daemon、adm、ftp、
-mail等；这类用户都系统自身拥有的，而非后来添加的，我们也可以添加虚拟用户。</property>
+mail等；这类用户都系统自身拥有的，而非后来添加的，我们也可以添加虚拟用户。
+
+      勾选“加密我的主目录”项后需要密码才能看我的主目录上的文件，如果对此项选项不熟
+悉，建议不要勾选，以免加密后无法访问主目录。&#13;</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>

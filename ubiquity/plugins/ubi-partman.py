@@ -1002,9 +1002,9 @@ class PageGtk(PageBase):
                 min_size_mb = min(min_size_mb, cur_size_mb)
                 max_size_mb = max(cur_size_mb, max_size_mb)
         if max_size_mb is not 0:
-            max_label_text = "(" + str(round((max_size_mb / 1000),2)) + "GB)"
+            max_label_text = "(" + str(round((cur_size_mb / 1000),2)) + "GB)"
             min_label_text = "(" + str(round(min_size_mb,2)) + "MB)"
-            custom_entry_text = str(round((max_size_mb / 1000),2))
+            custom_entry_text = str(round((cur_size_mb / 1000),2))
             self.partition_size_max_label.set_text(max_label_text)
             self.partition_size_min_label.set_text(min_label_text)
             self.partition_size_custom_entry.set_text(custom_entry_text)
@@ -1093,7 +1093,7 @@ class PageGtk(PageBase):
             elif self.partition_size_min.get_active():
                 size = str(min_size_mb)
             elif self.partition_size_custom.get_active():
-                size = str(int(self.partition_size_custom_entry.get_text()) * 1000)
+                size = str(float(self.partition_size_custom_entry.get_text()) * 1000)
     
             if partition['parted']['type'] == 'primary':
                 prilog = PARTITION_TYPE_PRIMARY

@@ -65,6 +65,8 @@ class PreparePageBase(plugin.PluginUI):
 
 class PageGtk(PreparePageBase):
     restricted_package_name = 'ubuntu-restricted-addons'
+    help_dialog = 'help_prepare' #add by wangjingsi
+    help_label = 'prepare_text_label' #add by wangjingsi
 
     def __init__(self, controller, *args, **kwargs):
         if self.is_automatic:
@@ -96,6 +98,11 @@ class PageGtk(PreparePageBase):
         self.prepare_network_connection = builder.get_object(
             'prepare_network_connection')
         self.plugin_widgets = self.page
+
+#add by wangjingsi
+    def plugin_on_help_clicked(self):
+        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui', self.help_dialog, self.help_label)
+#end by wangjingsi
 
     def enable_download_updates(self, val):
         self.prepare_download_updates.set_sensitive(val)

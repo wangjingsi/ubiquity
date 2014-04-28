@@ -307,6 +307,7 @@ class PageGtk(PageBase):
 
     def plugin_set_online_state(self, state):
         from gi.repository import GLib
+        self.release_notes_label.set_markup('')  #add by wangjingsi
         if self.release_notes_label:
             if self.timeout_id:
                 GLib.source_remove(self.timeout_id)

@@ -42,6 +42,8 @@ OEM = False
 class PageGtk(plugin.PluginUI):
 
     plugin_title = 'ubiquity/text/overview_heading_label'
+    help_dialog = 'help_overview' #add by wangjingsi
+    help_label = 'overview_text_label' #add by wangjingsi
 
     def __init__(self, controller, *args, **kwargs):
         self.controller = controller
@@ -71,6 +73,11 @@ class PageGtk(plugin.PluginUI):
         self.partitioninfo = builder.get_object(
             'partitioninfo')
         self.plugin_widgets = self.page
+
+#add by wangjingsi
+    def plugin_on_help_clicked(self):
+        self.show_help('/usr/share/ubiquity/gtk/stepHelp.ui', self.help_dialog, self.help_label)
+#end by wangjingsi
 
     def set_modelcode(self,modelcode):
         if modelcode:

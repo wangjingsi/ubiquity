@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkWindow" id="help_PartAdvanced">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">帮助</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title6">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkLabel" id="PartAdvanced_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="margin_top">5</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">      用户可选中需要编辑的分区后，点击“添加”、“删除”、“更改”、“还原”、“新建分区”
+按钮对分区进行相应操作。至少要为系统添加一个 / 根分区。
+
+
+      名词解释：
+
+      文件系统：推荐使用 EXT4 文件系统。    &#13;　　格式化：对于一个分区是否格式化，要看分区所承载的内容，一般建议根分区格式化，
+其他分区如 /home 的可以根据用户自己的选择是否格式化，因为 /home 分区保存的是个
+人数据。  
+&#13;　　分区标签：卷标，给分区起个名字    &#13;　　挂载点：对于COS桌面操作系统，根分区是必需的，而且只能有一个，类似于
+ Windows 系统的 C 盘。交换分区类似于虚拟内存，建议的大小是和物理内存一样，小于
+2G。  
+&#13;      硬盘分区有三种，主磁盘分区、扩展磁盘分区、逻辑分区。在Windows系统中，是先
+将物理地址分开(分出主磁盘分区和逻辑分区)，再在分区上建立目录，所以所有路径都是从
+盘符开始，如C://Program Files。而COS桌面正好相反，是先有目录，再将物理地址(分区)
+映射到目录中，因此在COS桌面中，所有路径都是从根目录开始【/】。
+&#13;      各常见分区介绍:
+&#13;      / 根分区：是整个系统的根目录，是COS桌面操作系统必需的分区；
+&#13;      /swap 分区：是暂时存储数据的交换分区，也是COS桌面必需的分区，通常分配给其的
+大小为物理内存的2倍；
+&#13;      /home 分区 ：用来保存个人用户数据，建议独立挂载；
+&#13;      /usr 分区：系统存放软件的地方，如有可能应将尽量大空间分给它。
+</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area7">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton7">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="help_PartAuto">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkLabel" id="PartAuto_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="margin_top">5</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">　　COS桌面操作系统支持在一台计算机上安装多个操作系统，它通过GRUB多重启动管理
+器来支持多操作系统并存，GRUB可以引导多个操作系统。计算机启动时，用户可以使用
+GRUB提供的菜单来选择需要启动的系统。因此，不必担心在安装COS桌面操作系统后，导
+致其他操作系统不能使用问题的发生。
+&#13;　　GRUB是Grand Unified Boot Loader的缩写，是一个功能强大的引导程序，专门解决
+Linux类操作系统和其他操作系统的共存问题。它可以引导操作大硬盘、支持开机画面及单
+式选择，并且分区位置改变后不必重新配置，使用非常方便。</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry2">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton1">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="help_PartCrypto">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box3">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkLabel" id="PartCrypto_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="margin_top">5</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">　　请在此页面输入您的密钥，并牢记密钥。
+
+
+      名词解释：
+
+      磁盘加密使用强大的加密算法对存储在计算机和笔记本电脑硬盘上的数据进行自动保
+护。用户可以通过提前设定的密钥来访问这些受保护的数据。</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry3">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton2">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="help_console-setup">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box4">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow4">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport4">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkLabel" id="console-setup_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="margin_top">10</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">　　选择安装好的COS桌面操作系统中使用的键盘布局，如果您不清楚键盘布局，可点击“
+探测键盘布局”按钮进行探测。
+
+
+      名词解释:　　
+
+      键盘布局：计算机、打字机或其他类似设备的按键在键盘上的安排方式。所使用的键盘
+布局由计算机中的软件决定， 按键上的字符表示键盘的标准布局。，全世界采用许多不同的
+键盘布局。实际的键盘布局取决于所在的国家或使用的语言。
+&#13;　　死键：也叫结合键，在单击的时候不产生字符，但是会修改随后一个按键的输入结果。
+在有些系统里，单击此键无显示，但是在在有些文本输入系统里会显示一个等候输入的标
+记，等候输入主体字母或是敲击空格输入单独的附加符号 。</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry4">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton3">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="help_language">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">帮助</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box5">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title4">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow5">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport5">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkLabel" id="language_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">　　选择要在安装过程中使用的语言，目前提供“中文（简体）”和“English”，默认选择
+“中文（简体）”
+
+      点击“继续”前往下一个对话框。</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area4">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry5">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton4">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="help_overview">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box6">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title5">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow6">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport6">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkLabel" id="overview_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">　　此页面展示您在安装COS桌面操作系统过程中设置的信息，确认信息无误之后可点击
+ “继续” 进行系统安装，若想更改信息，可点击 ”后退“ 回到相应页面重新设置。
+</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area5">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry6">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton5">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="help_partman">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box7">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title7">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow7">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport7">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkLabel" id="partman_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">      请选择要使用的安装模式，有以下几种模式供选择。
+
+      清楚整个磁盘安装COS桌面操作系统：此模式将清空硬盘所有数据，自动分区安装COS
+桌面操作系统，并且无法选择分区大小。请慎重选择此模式，建议需要安装COS桌面操作系
+统单系统，但不会分区的用户选择此模式。
+
+      安装COS桌面操作系统与现存系统共存：当安装程序识别出当前磁盘已经安装有操作系
+统时，当前页面会自动出现此选项，选择此模式将保留之前安装的操作系统和个人用户数
+据，并且自动分区安装COS桌面操作系统。当系统没有空闲空间或者不足时，可能需要删除
+硬盘出现的一个分区。建议需要安装COS桌面操作系统，组成双系统，但不会分区的用户选
+择此模式。
+
+      将现存系统替换为COS桌面操作系统：此模式将会删除现存的系统，并且自动安装COS
+桌面操作系统，磁盘之前安装的系统和数据将全部删除。建议需要替换当前系统为COS桌面
+操作系统，但不会分区的用户选择此模式。
+
+      专家模式：此模式可以进行手动的分区配置，需要您熟悉一定的Linux分区知识，有经
+验的用户或者需要自定义配置用户建议选择此模式。
+
+　　为了安全起见，将会加密你的新COS桌面操作系统：勾选此项将会加密安装程序，不建
+议新手用户勾选。
+&#13;　　给新安装的COS桌面操作系统使用LVM：LVM是 Logical Volume Manager（逻辑卷
+管理）的简写，它是Linux环境下对磁盘分区进行管理的一种机制，利用Linux内核的
+device-mapper来实现存储系统的虚拟化（系统分区独立于底层硬件）。不建议新手用户
+勾选。</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area6">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry7">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton6">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="help_prepare">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box8">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title8">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow8">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport8">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkLabel" id="prepare_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">　　此页面列举安装COS桌面操作系统前需要准备的条件，请尽量满足，防止安装系统过
+程中出现意外。
+      
+      当磁盘可用空间不够时，强烈建议停止安装系统。
+      </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area8">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry8">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton8">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="help_timezone">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box9">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title9">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow9">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport9">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkLabel" id="timezone_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">      选择在系统中使用的时区。   
+
+      点击地图，可通过选择所在地设置时区。默认为北京时间。</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area9">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry9">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton9">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkWindow" id="help_usersetup">
+    <property name="width_request">530</property>
+    <property name="height_request">400</property>
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <child>
+      <object class="GtkBox" id="box10">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="help_title10">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">3</property>
+            <property name="xalign">0</property>
+            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;帮助&lt;/b&gt;&lt;/big&gt;</property>
+            <property name="use_markup">True</property>
+            <property name="single_line_mode">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow10">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">10</property>
+            <property name="margin_right">10</property>
+            <property name="margin_bottom">10</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport" id="viewport10">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="valign">start</property>
+                <child>
+                  <object class="GtkLabel" id="usersetup_text_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="xalign">0</property>
+                    <property name="label" translatable="yes">　　程序将创建一个用来取代root执行非管理任务的普通用户账号。输入“您的姓名”和“密
+码”以指定给该用户账号，但用户名不可使用系统保留的虚拟用户名（bin、daemon、
+adm、ftp等）。“您的计算机名”和“选择一个用户”会自动完成输入，可以不用手工输入。
+&#13;　　关于密码，至少6个字符，数字、大写字母或符号的个数不能小于两个。
+&#13;　　如果登陆和使用COS桌面操作系统时需要验证，请选择“登陆时需要密码”。如果选择“
+自动登陆”，则会跳过验证过程，该账号会自动登陆。
+
+      勾选“加密我的主目录”项后需要密码才能看我的主目录上的文件，如果对此项选项不熟
+悉，建议不要勾选，以免加密后无法访问主目录。&#13;</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="dialog-action_area10">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkEntry" id="entry10">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="margin_left">10</property>
+                <property name="invisible_char">●</property>
+                <property name="invisible_char_set">True</property>
+                <property name="primary_icon_stock">gtk-find</property>
+                <signal name="changed" handler="find_change" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+                <property name="secondary">True</property>
+                <property name="non_homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closebutton10">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">10</property>
+                <property name="use_underline">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="closs_help" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
